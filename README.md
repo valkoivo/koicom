@@ -10,6 +10,11 @@ Frontend interfaces built with the KoiCom library can run entirely on the client
 
 The following is an example of a CRUD panel created using the library's basic components.
 
+<p align="center"><img src="https://valkoivo.github.io/koicom/img/crud.png" alt="koicom crud panel" width="670"/></p>
+
+A link to the CRUD panel:
+[a link](https://valkoivo.github.io/koicom/docs/book/13_example.html)
+
 ## Documentation ##
 The KoiCom library includes documentation and a set of fundamental components.
 
