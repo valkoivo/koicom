@@ -1,0 +1,92 @@
+body {
+	font-weight: 400;
+	background: #f2f4f6;
+	font-size: 14px;
+	line-height: 1.42857143;
+}
+
+.wrapper {
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: auto;
+	min-height: 100%;
+	overflow: initial;
+	background-color: #f9fafc;
+}
+
+.wrapper:before,
+.wrapper:after {
+	content: " ";
+	display: table;
+}
+
+.wrapper:after {
+	clear: both;
+}
+
+/* This prevents the page scroll to top when modal opens */
+body.modal-open {
+	overflow: initial;
+}
+
+/*
+ * Content Wrapper - contains the main content
+ */
+.content-wrapper,
+.main-footer {
+	-webkit-transition: -webkit-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+	-moz-transition: -moz-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+	-o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+	transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+	margin-left: 230px;
+	z-index: 820;
+}
+
+@media (max-width: 767px) {
+	.content-wrapper,
+	.main-footer {
+		margin-left: 0;
+	}
+}
+
+.content-wrapper {
+	min-height: calc(100vh - 101px);
+	background-color: #ecf0f5;
+	z-index: 800;
+}
+
+@media (min-width: 768px) {
+	.sidebar-collapse .content-wrapper{
+		margin-left: 0;
+	}
+}
+
+.main-footer {
+	background: #fff;
+	padding: 15px;
+	color: #444;
+	border-top: 1px solid #d2d6de;
+}
+
+@media (min-width: 768px) {
+	.sidebar-collapse .content-wrapper,
+	.sidebar-collapse .main-footer {
+		margin-left: 0 !important;
+		z-index: 840;
+	}
+}
+
+/* Content */
+.content {
+	min-height: 250px;
+	padding: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.pull-right {
+	float: right;
+}

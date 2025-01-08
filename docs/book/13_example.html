@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>KoiCom</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/x-icon" href="../../favicon.ico">
+
+	<!-- Bootstrap -->
+	<link href="../../libs/bootstrap/css/bootstrap.min.css" type="text/css" data-template-style="true" rel="stylesheet" />
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Layout and NonJS Components -->
+	<link href="../../css/template/layout.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/template/typo.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/headers/koi_main_header.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/footers/koi_main_footer.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/panels/koi_main_content.css" type="text/css" rel="stylesheet" />
+
+	<!-- Web Components -->
+	<link href="../../css/controls/buttons/koi_idlink_for_header.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/sidebars/koi_main_sidebar.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/panels/koi_sidebar_contents.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/tables/crud_sample_table_contents.css" type="text/css" rel="stylesheet" />
+
+	<!-- escapeHTML is used to show JavaScript code in Cards -->
+	<script>
+		const escapeHTML = str => str.replace(/[&<>'"]/g, 
+			tag => ({
+			'&': '&amp;',
+			'<': '&lt;',
+			'>': '&gt;',
+			"'": '&#39;',
+			'"': '&quot;'
+		}[tag]));
+	</script>
+
+</head>
+<body>
+	<docs-main-wrapper id="koi_main_wrapper" class="wrapper">
+		<header class="koi-main-header">
+
+			<docs-idlink-for-header class="idlink-for-header" id="koi_idlink_for_header" item_action="toggle_sidebar"><span class="d-none">Show Sidebar Menu</span></docs-idlink-for-header>
+
+			<a href="../../index.html" class="logo">
+				<span class="logo-mini d-none"><img src="../../img/logo.png" class="favicon" alt="KoiCom" /></span>
+				<span class="logo-lg">KoiCom</span>
+			</a>
+			<nav class="navbar"></nav>
+		</header>
+		<docs-main-sidebar id="simple_sidebar" class="main-sidebar">
+			<div class="sidebar-contents" id="koi_sidebar_contents"><section class="sidebar"><ul class="sidebar-menu"><li class="header"><a href="../../index.html">INTRODUCTION</a></li></ul><ul class="sidebar-menu"><li><a aria-expanded="true" data-bs-toggle="collapse" href="#collapse_library"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg> <span>Library</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_library" class="collapse show"><li><a href="../../docs/book/1_overview.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"></path></svg> <span>Overview</span></a></li><li><a href="../../docs/book/2_structure.html"><svg height="16" width="18" viewBox="0 0 576 512"><path d="M208 80c0-26.5 21.5-48 48-48h64c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-8v40H464c30.9 0 56 25.1 56 56v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H464c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-4.4-3.6-8-8-8H312v40h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H256c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V280H112c-4.4 0-8 3.6-8 8v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-30.9 25.1-56 56-56H264V192h-8c-26.5 0-48-21.5-48-48V80z"></path></svg> <span>Structure</span></a></li><li><a href="../../docs/book/3_usage.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M416 0C400 0 288 32 288 176V288c0 35.3 28.7 64 64 64h32V480c0 17.7 14.3 32 32 32s32-14.3 32-32V352 240 32c0-17.7-14.3-32-32-32zM64 16C64 7.8 57.9 1 49.7 .1S34.2 4.6 32.4 12.5L2.1 148.8C.7 155.1 0 161.5 0 167.9c0 45.9 35.1 83.6 80 87.7V480c0 17.7 14.3 32 32 32s32-14.3 32-32V255.6c44.9-4.1 80-41.8 80-87.7c0-6.4-.7-12.8-2.1-19.1L191.6 12.5c-1.8-8-9.3-13.3-17.4-12.4S160 7.8 160 16V150.2c0 5.4-4.4 9.8-9.8 9.8c-5.1 0-9.3-3.9-9.8-9L127.9 14.6C127.2 6.3 120.3 0 112 0s-15.2 6.3-15.9 14.6L83.7 151c-.5 5.1-4.7 9-9.8 9c-5.4 0-9.8-4.4-9.8-9.8V16zm48.3 152l-.3 0-.3 0 .3-.7 .3 .7z"></path></svg> <span>Usage</span></a></li><li><a href="../../docs/book/4_inheritance.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L400 115.9V320c0 8.8-7.2 16-16 16zM192 384H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16H96V128H64z"></path></svg> <span>Inheritance</span></a></li><li><a href="../../docs/book/5_composition.html"><svg height="16" width="14" viewBox="0 0 576 512"><path d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z"></path></svg> <span>Composition</span></a></li><li><a href="../../docs/book/6_mvc.html"><svg height="16" width="14" viewBox="0 0 640 512"><path d="M0 32C0 14.3 14.3 0 32 0H48c44.2 0 80 35.8 80 80V368c0 8.8 7.2 16 16 16H608c17.7 0 32 14.3 32 32s-14.3 32-32 32H541.3c1.8 5 2.7 10.4 2.7 16c0 26.5-21.5 48-48 48s-48-21.5-48-48c0-5.6 1-11 2.7-16H253.3c1.8 5 2.7 10.4 2.7 16c0 26.5-21.5 48-48 48s-48-21.5-48-48c0-5.6 1-11 2.7-16H144c-44.2 0-80-35.8-80-80V80c0-8.8-7.2-16-16-16H32C14.3 64 0 49.7 0 32zM432 96V56c0-4.4-3.6-8-8-8H344c-4.4 0-8 3.6-8 8V96h96zM288 96V56c0-30.9 25.1-56 56-56h80c30.9 0 56 25.1 56 56V96 320H288V96zM512 320V96h16c26.5 0 48 21.5 48 48V272c0 26.5-21.5 48-48 48H512zM240 96h16V320H240c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48z"></path></svg> <span>MVC</span></a></li><li><a href="../../docs/book/7_workflow.html"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M32 48c0 8.8 7.2 16 16 16H64V192H32c-8.8 0-16 7.2-16 16s7.2 16 16 16h96c8.8 0 16-7.2 16-16s-7.2-16-16-16H96V48c0-8.8-7.2-16-16-16H48c-8.8 0-16 7.2-16 16zM192 96c0 8.8 7.2 16 16 16H496c8.8 0 16-7.2 16-16s-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm0 160c0 8.8 7.2 16 16 16H496c8.8 0 16-7.2 16-16s-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm0 160c0 8.8 7.2 16 16 16H496c8.8 0 16-7.2 16-16s-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zM58.7 323.9c11.1-11.1 29.2-10.5 39.6 1.3c9.2 10.5 8.9 26.2-.6 36.3L12.3 453.1c-4.3 4.7-5.5 11.5-3 17.3s8.3 9.6 14.7 9.6H128c8.8 0 16-7.2 16-16s-7.2-16-16-16H60.8l60.3-64.6c20.7-22.2 21.2-56.4 1.3-79.3c-22.5-25.7-62.1-27.1-86.3-2.9L20.7 316.7c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l15.4-15.4z"></path></svg> <span>Workflow</span></a></li><li><a href="../../docs/book/8_attributes.html"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"></path></svg> <span>Attributes</span></a></li><li><a href="../../docs/book/9_schema.html"><svg height="16" width="14" viewBox="0 0 384 512"><path d="M328 24V176h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H304 248c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V57.3l-16.4 5.5C251 67 237.4 60.2 233.2 47.6S235.8 21.4 248.4 17.2l48-16C303.7-1.2 311.8 0 318 4.5S328 16.3 328 24zM104 312V464h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H80 24c-13.3 0-24-10.7-24-24s10.7-24 24-24H56V345.3l-16.4 5.5C27 355 13.4 348.2 9.2 335.6S11.8 309.4 24.4 305.2l48-16c7.3-2.4 15.4-1.2 21.6 3.3s10 11.8 10 19.5zM0 72C0 32.2 32.2 0 72 0h48c39.8 0 72 32.2 72 72v80c0 39.8-32.2 72-72 72H72c-39.8 0-72-32.2-72-72V72zM72 48C58.7 48 48 58.7 48 72v80c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H72zM264 288h48c39.8 0 72 32.2 72 72v80c0 39.8-32.2 72-72 72H264c-39.8 0-72-32.2-72-72V360c0-39.8 32.2-72 72-72zm-24 72v80c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V360c0-13.3-10.7-24-24-24H264c-13.3 0-24 10.7-24 24z"></path></svg> <span>Schema</span></a></li><li><a href="../../docs/book/10_dataflow.html"><svg height="16" width="14" viewBox="0 0 576 512"><path d="M354.5 104.3L320 135.7V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V135.7l-34.5-31.3c-13.1-11.9-33.3-10.9-45.2 2.2s-10.9 33.3 2.2 45.2l88 80c12.2 11.1 30.8 11.1 43.1 0l88-80c13.1-11.9 14-32.1 2.2-45.2s-32.1-14-45.2-2.2zm-85 189.6C247 309.4 219.5 320 192 320c-26.9 0-55.3-10.8-77.4-26.1l0 0c-11.9-8.5-28.1-7.8-39.2 1.7c-14.4 11.9-32.5 21-50.6 25.2c-17.2 4-27.9 21.2-23.9 38.4s21.2 27.9 38.4 23.9c24.5-5.7 44.9-16.5 58.2-25C126.5 373.7 159 384 192 384c31.9 0 60.6-9.9 80.4-18.9c5.8-2.7 11.1-5.3 15.6-7.7c4.5 2.4 9.7 5.1 15.6 7.7c19.8 9 48.5 18.9 80.4 18.9c33 0 65.5-10.3 94.5-25.8c13.4 8.4 33.7 19.3 58.2 25c17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2c-11.1-9.5-27.3-10.1-39.2-1.7l0 0C439.4 309.2 410.9 320 384 320c-27.5 0-55-10.6-77.5-26.1c-11.1-7.9-25.9-7.9-37 0zm37 128c-11.1-7.9-25.9-7.9-37 0C247 437.4 219.5 448 192 448c-26.9 0-55.3-10.8-77.4-26.1l0 0c-11.9-8.5-28.1-7.8-39.2 1.7c-14.4 11.9-32.5 21-50.6 25.2c-17.2 4-27.9 21.2-23.9 38.4s21.2 27.9 38.4 23.9c24.5-5.7 44.9-16.5 58.2-25C126.5 501.7 159 512 192 512c31.9 0 60.6-9.9 80.4-18.9c5.8-2.7 11.1-5.3 15.6-7.7c4.5 2.4 9.7 5.1 15.6 7.7c19.8 9 48.5 18.9 80.4 18.9c33 0 65.5-10.3 94.5-25.8c13.4 8.4 33.7 19.3 58.2 25c17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2c-11.1-9.4-27.3-10.1-39.2-1.7l0 0C439.4 437.2 410.9 448 384 448c-27.5 0-55-10.6-77.5-26.1z"></path></svg> <span>Dataflow</span></a></li><li><a href="../../docs/book/11_connectors.html"><svg height="16" width="14" viewBox="0 0 384 512"><path d="M96 0C78.3 0 64 14.3 64 32v96h64V32c0-17.7-14.3-32-32-32zM288 0c-17.7 0-32 14.3-32 32v96h64V32c0-17.7-14.3-32-32-32zM32 160c-17.7 0-32 14.3-32 32s14.3 32 32 32v32c0 77.4 55 142 128 156.8V480c0 17.7 14.3 32 32 32s32-14.3 32-32V412.8C297 398 352 333.4 352 256V224c17.7 0 32-14.3 32-32s-14.3-32-32-32H32z"></path></svg> <span>Connectors</span></a></li><li><a href="../../docs/book/12_sockets.html"><svg height="16" width="14" viewBox="0 0 576 512"><path d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64H240l-10.7 32H160c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H346.7L336 416H512c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM512 64V352H64V64H512z"></path></svg> <span>Sockets</span></a></li><li><a class="active" href="../../docs/book/13_example.html"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm64 0v64h64V96H64zm384 0H192v64H448V96zM64 224v64h64V224H64zm384 0H192v64H448V224zM64 352v64h64V352H64zm384 0H192v64H448V352z"></path></svg> <span>Example</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_providers"><svg height="16" width="12" viewBox="0 0 384 512"><path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm97 289c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L79 303c-9.4 9.4-9.4 24.6 0 33.9l48 48c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-31-31 31-31zM257 255c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l31 31-31 31c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l48-48c9.4-9.4 9.4-24.6 0-33.9l-48-48z"></path></svg> <span>Providers</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_providers" class="collapse "><li><a href="../../docs/providers/provider.html"><svg height="16" width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 86l0 88.7c-13.3 7.2-31.6 14.2-54.8 19.9C311.3 203 269.5 208 224 208s-87.3-5-121.2-13.4C79.6 188.9 61.3 182 48 174.7L48 86l.6-.5C53.9 81 64.5 74.8 81.8 68.6C115.9 56.5 166.2 48 224 48s108.1 8.5 142.2 20.6c17.3 6.2 27.8 12.4 33.2 16.9l.6 .5zm0 141.5l0 75.2c-13.3 7.2-31.6 14.2-54.8 19.9C311.3 331 269.5 336 224 336s-87.3-5-121.2-13.4C79.6 316.9 61.3 310 48 302.7l0-75.2c13.3 5.3 27.9 9.9 43.3 13.7C129.5 250.6 175.2 256 224 256s94.5-5.4 132.7-14.8c15.4-3.8 30-8.3 43.3-13.7zM48 426l0-70.4c13.3 5.3 27.9 9.9 43.3 13.7C129.5 378.6 175.2 384 224 384s94.5-5.4 132.7-14.8c15.4-3.8 30-8.3 43.3-13.7l0 70.4-.6 .5c-5.3 4.5-15.9 10.7-33.2 16.9C332.1 455.5 281.8 464 224 464s-108.1-8.5-142.2-20.6c-17.3-6.2-27.8-12.4-33.2-16.9L48 426zm354.1-2.1s0 .1-.2 .2l.1-.2c0 0 0 0 0-.1zm-356.1 0s0 .1 .2 .2c-.1-.1-.1-.2-.2-.2zm0-335.8s.1-.1 .2-.2c-.1 .1-.2 .2-.2 .2zm356-.2c.1 .1 .2 .2 .2 .2s0-.1-.2-.2zM448 432l0-352C448 35.8 347.7 0 224 0S0 35.8 0 80L0 432c0 44.2 100.3 80 224 80s224-35.8 224-80z"></path></svg> <span>Provider</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_controls"><svg height="16" width="12" viewBox="0 0 384 512"><path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm97 289c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L79 303c-9.4 9.4-9.4 24.6 0 33.9l48 48c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-31-31 31-31zM257 255c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l31 31-31 31c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l48-48c9.4-9.4 9.4-24.6 0-33.9l-48-48z"></path></svg> <span>Controls</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_controls" class="collapse "><li><a href="../../docs/controls/label.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M288 64c0 17.7-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32H256c17.7 0 32 14.3 32 32zm0 256c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H256c17.7 0 32 14.3 32 32zM0 192c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg> <span>Label</span></a></li><li><a href="../../docs/controls/table.html"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M64 256V160H224v96H64zm0 64H224v96H64V320zm224 96V320H448v96H288zM448 256H288V160H448v96zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"></path></svg> <span>Table</span></a></li><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_buttons"><svg height="16" width="14" viewBox="0 0 640 512"><path d="M192 112c-79.5 0-144 64.5-144 144s64.5 144 144 144l256 0c79.5 0 144-64.5 144-144s-64.5-144-144-144l-256 0zM0 256C0 150 86 64 192 64l256 0c106 0 192 86 192 192s-86 192-192 192l-256 0C86 448 0 362 0 256zm232-56l0 32 32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0 0 32c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-32-32 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l32 0 0-32c0-13.3 10.7-24 24-24s24 10.7 24 24zm168 72a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm32-64a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg> <span>Buttons</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_buttons" class="collapse "><li><a href="../../docs/controls/buttons/idlink.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M16 64c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H128V224c0 53 43 96 96 96s96-43 96-96V96H304c-17.7 0-32-14.3-32-32s14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H384V224c0 88.4-71.6 160-160 160s-160-71.6-160-160V96H48C30.3 96 16 81.7 16 64zM0 448c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32z"></path></svg> <span>IdLink</span></a></li><li><a href="../../docs/controls/buttons/switch.html"><svg height="16" width="14" viewBox="0 0 576 512"><path d="M160 128C89.3 128 32 185.3 32 256s57.3 128 128 128l256 0c70.7 0 128-57.3 128-128s-57.3-128-128-128l-256 0zM0 256C0 167.6 71.6 96 160 96l256 0c88.4 0 160 71.6 160 160s-71.6 160-160 160l-256 0C71.6 416 0 344.4 0 256zm480 0a64 64 0 1 0 -128 0 64 64 0 1 0 128 0zm-160 0a96 96 0 1 1 192 0 96 96 0 1 1 -192 0z"></path></svg> <span>Switch</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_formfields"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm128 0V224H448V96H128zM448 288H128V416H448V288z"></path></svg> <span>Form Fields</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_formfields" class="collapse "><li><a href="../../docs/controls/formfield/formfieldstring.html"><svg height="16" width="18" viewBox="0 0 576 512"><path d="M9.4 86.6C-3.1 74.1-3.1 53.9 9.4 41.4s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 9.4 86.6zM256 416H544c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg> <span>FormFieldString</span></a></li><li><a href="../../docs/controls/formfield/formfieldinteger.html"><svg height="16" width="18" viewBox="0 0 640 512"><path d="M576 128V384H64V128H576zM64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H576c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm40 120c0 13.3 10.7 24 24 24h8v96H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H184V184c0-13.3-10.7-24-24-24H128c-13.3 0-24 10.7-24 24zm190.6 30.4c5.7-8 17.5-8.6 24-1.2c5.2 5.9 5 14.7-.3 20.5l-72 78c-6.5 7-8.2 17.2-4.3 25.9s12.5 14.4 22 14.4h88c13.3 0 24-10.7 24-24s-10.7-24-24-24H318.8l34.8-37.7c22-23.8 22.4-60.3 1.1-84.7c-26.9-30.7-75.4-28.4-99.2 4.9l-11.1 15.6c-7.7 10.8-5.2 25.8 5.6 33.5s25.8 5.2 33.5-5.6l11.1-15.6z"></path></svg> <span>FormFieldInteger</span></a></li><li><a href="../../docs/controls/formfield/formfielddate.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"></path></svg> <span>FormFieldDate</span></a></li><li><a href="../../docs/controls/formfield/formfieldbinary.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg> <span>FormFieldBinary</span></a></li><li><a href="../../docs/controls/formfield/formfieldcheckboxes.html"><svg height="16" width="16" viewBox="0 0 512 512"><path d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg> <span>FormFieldCheckBoxes</span></a></li><li><a href="../../docs/controls/formfield/formfieldsinglechoice.html"><svg height="16" width="16" viewBox="0 0 448 512"><path d="M64 448c-17.7 0-32-14.3-32-32L32 96c0-17.7 14.3-32 32-32l320 0c17.7 0 32 14.3 32 32l0 320c0 17.7-14.3 32-32 32L64 448zM0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32C28.7 32 0 60.7 0 96L0 416zm224-64c9.6 0 18.7-4 25.2-11l95.5-102.8c4.7-5.1 7.3-11.8 7.3-18.7c0-15.2-12.3-27.5-27.5-27.5l-201 0C108.3 192 96 204.3 96 219.5c0 6.9 2.6 13.6 7.3 18.7L198.8 341c6.5 7 15.6 11 25.2 11zm-1.7-32.7L133.8 224l180.3 0-88.4 95.3c-.4 .5-1.1 .7-1.7 .7s-1.3-.3-1.7-.7z"></path></svg> <span>FormFieldSingleChoice</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_panels"><svg height="16" width="16" viewBox="0 0 448 512"><path d="M368 80l32 0 0 32-32 0 0-32zM352 32c-17.7 0-32 14.3-32 32L128 64c0-17.7-14.3-32-32-32L32 32C14.3 32 0 46.3 0 64l0 64c0 17.7 14.3 32 32 32l0 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l64 0c17.7 0 32-14.3 32-32l192 0c0 17.7 14.3 32 32 32l64 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l0-192c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l-64 0zM96 160c17.7 0 32-14.3 32-32l192 0c0 17.7 14.3 32 32 32l0 192c-17.7 0-32 14.3-32 32l-192 0c0-17.7-14.3-32-32-32l0-192zM48 400l32 0 0 32-32 0 0-32zm320 32l0-32 32 0 0 32-32 0zM48 112l0-32 32 0 0 32-32 0z"></path></svg> <span>Panels</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_panels" class="collapse "><li><a href="../../docs/controls/panel/panel.html"><svg height="16" width="16" viewBox="0 0 512 512"><path d="M464 48l0 416L48 464 48 48l416 0zM48 0L0 0 0 48 0 464l0 48 48 0 416 0 48 0 0-48 0-416 0-48L464 0 48 0z"></path></svg> <span>Panel</span></a></li><li><a href="../../docs/controls/panel/expansion_panel.html"><svg height="16" width="16" viewBox="0 0 512 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L96 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"></path></svg> <span>ExpansionPanel</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_dialogs"><svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M320 464c8.8 0 16-7.2 16-16l0-288-80 0c-17.7 0-32-14.3-32-32l0-80L64 48c-8.8 0-16 7.2-16 16l0 384c0 8.8 7.2 16 16 16l256 0zM0 64C0 28.7 28.7 0 64 0L229.5 0c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3L384 448c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64z"></path></svg> <span>Dialogs</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_dialogs" class="collapse "><li><a href="../../docs/controls/dialogs/question.html"><svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M64 48C37.5 48 16 69.5 16 96l0 320c0 26.5 21.5 48 48 48l320 0c26.5 0 48-21.5 48-48l0-320c0-26.5-21.5-48-48-48L64 48zM0 96C0 60.7 28.7 32 64 32l320 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM136 200c0-30.9 25.1-56 56-56l56.2 0c35.2 0 63.8 28.6 63.8 63.8c0 21.4-10.8 41.5-28.7 53.3L232 294.9l0 25.1c0 4.4-3.6 8-8 8s-8-3.6-8-8l0-29.5c0-2.7 1.4-5.2 3.6-6.7l54.9-36.2c13.4-8.8 21.5-23.8 21.5-39.9c0-26.4-21.4-47.8-47.8-47.8L192 160c-22.1 0-40 17.9-40 40l0 6.5c0 4.4-3.6 8-8 8s-8-3.6-8-8l0-6.5zm72 168a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z"></path></svg> <span>DialogQuestion</span></a></li><li><a href="../../docs/controls/dialogs/dialog.html"><svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M160 512l48-32 96-64 160 0 48 0 0-48 0-320 0-48L464 0 48 0 0 0 0 48 0 368l0 48 48 0 64 0 48 0 0 38.3 0 9.7 0 48zM277.4 376.1L208 422.3l0-6.3 0-48-48 0L48 368 48 48l416 0 0 320-160 0-14.5 0-12.1 8.1zM152 144l-24 0 0 48 24 0 208 0 24 0 0-48-24 0-208 0zm0 96l-24 0 0 48 24 0 112 0 24 0 0-48-24 0-112 0z"></path></svg> <span>DialogString</span></a></li></ul></li></ul></ul></li></ul></section></div>
+		</docs-main-sidebar>
+		<div class="content-wrapper">
+			<section class="content">
+
+				<h1>Example</h1>
+
+				<p>Now that we’ve covered the theory, it’s time to put it into practice by creating a composite component with an external data source — a standard CRUD panel.</p>
+
+				<crud-sample-panel id="sample_crud"></crud-sample-panel>
+
+				<h4>Structure</h4>
+
+				<p>We’ll divide the panel into its most independent parts. To do this, we’ll set aside its visual representation for now and focus on the processes involved during the panel’s operation and the data being processed.</p>
+
+				<p>When the page loads, the panel automatically retrieves a list of records. Each record can be modified or deleted. The entire list can also be reloaded, and new records can be added to it.</p>
+
+				<p>Loading the list — whether it’s an initial load or a reload — resets the panel to an initial state, with the loaded data serving as the starting dataset for subsequent operations. This means the panel operates with an initial and a final state. If we use a provider to fetch data, its role is limited to obtaining data from the server and triggering an event to reset the panel to its initial state. The provider itself should not change its data based on further actions.</p>
+
+				<p>Further actions include modifying and deleting records. These actions affect only the specific record involved. Users can interact with multiple records simultaneously, sending a request to modify one record while the server processes a prior request for another. Once the server response is received, it should update the relevant record’s display without affecting others. For this reason, modifying and deleting records require a dedicated provider for each record, ensuring updates are isolated to the relevant record.</p>
+
+				<p>Adding a record is similarly specific to a single record. After sending a request to create a new record and receiving its data, the panel should display the new record without altering any other records. This task should be handled by a separate provider designed explicitly for record creation.</p>
+
+				<p>The panel’s final state — the cumulative set of records — can be constructed by processing all events from all providers. The panel itself can implement behavior inherited from KoiDataCapable to store the resulting dataset within its own state.</p>
+
+				<p>Based on this breakdown, we’ll need to implement three types of providers, operating on two types of data. One provider will manage the data representing the list of records, while the other two will handle data related to individual records.</p>
+
+				<h4>Project</h4>
+
+				<p>As mentioned earlier, I prefer to keep files reasonably organized. You never know when the current project might evolve into a reusable library for future projects. For this reason, I’ll follow the file structure outlined in the "Structure" chapter.</p>
+
+				<p>To start, we’ll create a crud directory inside the js directory. Within crud, we’ll add two subdirectories: controls and providers. Let’s begin with the providers directory. Inside it, we’ll create a file named crud_sample_provider.js, which will act as our provider. This provider will facilitate interaction with server-side data — or, more precisely, simulate such interaction.</p>
+
+				<h4>Data Object for the List</h4>
+
+				<p>We’ll start building the provider by focusing on the data structure. Let’s assume our CRUD panel is designed to manage a list of names. While a simple array could represent this list, working with a database typically requires modifying a specific record using its unique identifier. As a result, our data structure needs to be more robust than a standard array.</p>
+
+				<p>We’ll create a subclass of KoiDataElement to manage and interact with this data structure. For clarity, we’ll also add two static methods: getHeader and getSampleData. These methods will make the structure easier to understand and will also prove useful in subsequent development.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_0" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_0').innerHTML = escapeHTML(`class KoiDataElementListOfNames extends KoiDataElementList {
+
+	static getHeader(){
+		return ['id', 'name', 'deleted'];
+	}
+
+	static getSampleData(){
+		return [
+			['id', 'name', 'deleted'],
+			[0, 'Alex Johnson', false],
+			[1, 'Taylor Smith', false],
+			[2, 'Jordan Lee', false],
+			[3, 'Casey Morgan', false],
+			[4, 'Riley Brooks', false],
+			[5, 'Avery Carter', false],
+			[6, 'Sam Parker', false],
+			[7, 'Jamie Taylor', false],
+			[8, 'Morgan Reed', false]
+		];
+	}
+
+	static getInitialNextFreeId(){
+		return 9;
+	}
+	...
+	_add(item_name){
+		let item_id = this._getItemIdForNewRecord();
+		this._value.push([item_id, item_name, false]);
+		return item_id;
+	}
+
+	add(item_name){
+		this._setDefined(true);
+		this.setChanged(true);
+		let item_id = this._add(item_name);
+		this.validateValueAndMarkValidity();
+		return item_id;
+	}
+	...
+}';`)</script>
+
+				<p>You can add, modify, and mark records as deleted within the structure using the deleted flag. While outright deletion is an option, there might come a time when the ability to restore deleted records is necessary. Hence, using a flag is a more flexible approach.</p>
+
+				<p>Modifying records involves updating the value of the data element. Therefore, any method that modifies records must also update the data element's flags by using _setDefined and setChanged methods, followed by validation with the validateValueAndMarkValidity method.</p>
+
+				<p>Next, we’ll implement a data object for the provider. This object will serve as an interface for interacting with the data element.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_0_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_0_1').innerHTML = escapeHTML(`class CRUDData extends KoiListData {
+	...
+	addItem(item_name){
+		return this._properties['items'].add(item_name);
+	}
+	...
+	constructProperties(){
+		this._properties = {
+			items: new KoiDataElementListOfNames({
+				localized_name: 'items',
+				allow_empty: true,
+				default_value: []
+			})
+		};
+	}
+	...
+}';`)</script>
+
+				<h4>Primary Provider</h4>
+
+				<p>Let’s create a provider responsible for storing the list’s data object and supplying initial data to other components.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_1').innerHTML = escapeHTML(`export class CRUDSampleProvider extends CRUDFakeDataLoadable(
+	KoiProvider
+) {
+	...
+	_constructData(){
+		return new CRUDData();
+	}
+	...
+}';`)</script>
+
+				<p>We’ll set the provider to start in the loading state and attempt to load data immediately upon connection.</p>
+
+				<p>To ensure the provider transitions to the loading state upon connection, several strategies are possible. However, on closer consideration, the provider should remain in the loading state whenever it has no data to share with other components — not just initially. Therefore, we’ll adjust the _getOwnStateCodeBasedOnOwnData method to include a check for the presence of data.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_1_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_1_1').innerHTML = escapeHTML(`export class CRUDSampleProvider extends ... {
+	...
+	_getOwnStateCodeBasedOnOwnData(){
+		if(!this.data.hasAllValues()){
+			return KoiState.getLoadingCode();
+		}
+		return super._getOwnStateCodeBasedOnOwnData();
+	}
+	_onAfterConnected(){
+		super._onAfterConnected();
+		this._loadDataWhenConnected();
+	}
+	...
+}';`)</script>
+
+				<p>The _loadDataWhenConnected method addresses the provider’s behavior concerning data retrieval. This behavior outlines how the provider communicates with the server, retrieves data, and converts it into its internal format. At this stage, we will simulate data loading to avoid dealing with potential data retrieval or API errors. Since this is a simulation, we’ll name the behavior CRUDFakeDataLoadable.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_1_2" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_1_2').innerHTML = escapeHTML(`const CRUDFakeDataLoadable = Sup => class extends Sup {
+
+	_convertSourceDataToProviderData(data_from_source){
+		
+	}
+	_setOwnDataWhenLoadSuccess(data){
+		
+	}
+	_onLoadSuccess(success_data){
+		this._log('_loadDataWhenConnected() - response=success');
+		this._setOwnDataWhenLoadSuccess(
+			this._convertSourceDataToProviderData(success_data)
+		);
+		this._updateSomethingWhenChanged();
+		this._onAfterChanged();
+	}
+	...
+	_getFakeSuccessData(){
+		
+	}
+	_startDataLoading(){
+		let success_data = this._getFakeSuccessData();
+		setTimeout(this._onLoadSuccess.bind(this, success_data), 2000);
+	}
+	_loadDataWhenConnected(){
+		this._startDataLoading();
+	}
+	...
+}';`)</script>
+
+				<p>The CRUDFakeDataLoadable behavior initiates the _startDataLoading method during component initialization and ensures that placeholder data is transformed and stored as the component’s internal data. This behavior is agnostic about the specifics of the data being loaded; therefore, some methods remain unimplemented and must be defined by the component that adopts the behavior.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_1_3" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_1_3').innerHTML = escapeHTML(`export class CRUDSampleProvider extends CRUDFakeDataLoadable(...) {
+
+	_convertSourceDataToProviderData(data_from_source){
+		return data_from_source;
+	}
+	_setOwnDataWhenLoadSuccess(data){
+		this.data.setItems(data);
+	}
+	_getFakeSuccessData(){
+		return CRUDDataElementListOfNames.getSampleData();
+	}
+	...
+}';`)</script>
+
+				<p>Here’s where our sample data structure proves useful — we’ll assume the server returns data identical to what the static getSampleData method provides.</p>
+
+				<p>Let’s recap the provider’s workflow. When initialized, the provider enters the loading state (as previously implemented). It then sends a request to the server. Once the server responds, the _onLoadSuccess method is triggered. Upon receiving the data, we convert it into the desired structure and assign it to the provider’s internal data object. This data object processes the new information and marks itself as modified using the setChangedAll method. The _updateSomethingWhenChanged method then transitions the provider to the ready state. As the provider’s state changes from loading to ready, the _onAfterChanged method triggers a koi-changed event, informing other components that the provider is now ready to supply data.</p>
+
+				<p>What can this provider do?</p>
+
+				<p>
+					<ul>
+						<li>Self-load: The provider can autonomously fetch data, while subscribed components remain in a waiting state.</li>
+						<li>Load and share data: The provider can retrieve a set of records, enabling components to display column headers and even the records themselves.</li>
+						<li>Reload: If the provider reloads (via the attemptReload method), components will again transition to a waiting state. Once the reload is complete, the provider will update the components with a fresh dataset.</li>
+					</ul>
+				</p>
+
+				<p>For now, this functionality is sufficient. Let’s put the provider to use.</p>
+
+				<h4>Displaying the Provider’s State</h4>
+
+				<p>We’ll start by designing a component to display the provider’s state. This component will show notifications when the provider is busy loading data or when an error occurs. In its normal state, it will display the data provided by the provider.</p>
+
+				<p>For the base class, we’ll use KoiPanel. Why this class and not a table-like class?</p>
+
+				<p>As previously noted, the KoiCom library classifies components based on behavior rather than appearance. The required behavior for our component includes reflecting the provider's state by showing notifications for loading, errors, or readiness. Additionally, the component should display table headers.</p>
+
+				<p>Should this component manage the table rows? Given that rows will not only be bulk-loaded but also added, deleted, and updated individually, there are two options: either the component handles complex row management itself, or it delegates this responsibility to another component.</p>
+
+				<p>We’ll choose to delegate row management to a secondary component. Our main component will include the additional behavior of displaying this delegated component.</p>
+
+				<p>In conclusion, the behavior of this component is markedly different from that of a KoiTable. It’s better described as a headered frame — a component that frames displayed rows, includes column headers, and shows notifications when no content is available. We’ll call this class CRUDSampleHeaderedFrame.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_2" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_2').innerHTML = escapeHTML(`export class CRUDSampleHeaderedFrame extends KoiControlConnectorInteractable(
+	...
+		KoiPanel
+	...
+) {
+	static getTagName(){
+		return 'crud-headered-frame';
+	}
+	...
+}`)</script>
+
+				<p>We’ll base our component on KoiPanel because it’s a versatile and universal foundation. Additionally, we’ll incorporate the KoiControlConnectorInteractable behavior, as CRUDSampleHeaderedFrame needs to reflect the provider's state.</p>
+
+				<p>Do we need to develop a custom behavior specifically for CRUDSampleHeaderedFrame? Likely not. Since the CRUDData type is derived from KoiListData, and functionalities like adding, deleting, and modifying individual records won’t be required, the standard KoiSingleConnector will be sufficient. It will also support the standard KoiControlConnectorInteractable behavior for interacting with the provider.</p>
+
+				<p>That said, the component’s socket will have some unique characteristics. For notifications, we will use a collection of div elements, each containing a different message, and toggle their visibility to reflect the current state effectively.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_2_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_2_1').innerHTML = escapeHTML(`export class CRUDSampleHeaderedFrameSocket extends KoiSocketTemplateCapable(KoiCompositeSocket) {
+
+	displayWaiting(){
+		this._hide('holder');
+		this._hide('error');
+		this._show('spinner');
+		this._holder.show();
+	}
+	...
+	displayNormalState(){
+		this._show('holder');
+		this._hide('error');
+		this._hide('spinner');
+		this._holder.show();
+	}
+	...
+	getTemplate(){
+		return '<div id="' + this.getID('holder') + '" class="d-none">' +
+			...
+		'</div>' +
+		'<div id="' + this.getID('spinner') + '" class="card mb-3" style="padding: 14px;">' +
+			'<div class="alert alert-primary" role="alert">Loading...</div>' +
+		'</div>' +
+		'<div id="' + this.getID('error') + '" class="card mb-3 d-none" style="padding: 14px;">' +
+			'<div class="alert alert-danger" role="alert">Error</div>' +
+		'</div>';
+	}
+	...
+	_getEmptySchemaIds(){
+		return {
+			holder: this._holder.id + '_holder',
+			...
+			spinner: this._holder.id + '_spinner',
+			error: this._holder.id + '_error'
+		};
+	}
+	...
+}`)</script>
+
+				<p>The presence of a set of div elements means that we cannot use a KoiSingleSocket and would be better off with a KoiCompositeSocket, as it allows us to reference multiple internal components by name.</p>
+
+				<p>The component will not interact with the socket directly; instead, it will use the CRUDSampleHeaderedFrameSocketConnectable behavior, which will delegate the task of displaying states to the socket.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_2_2" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_2_2').innerHTML = escapeHTML(`export const CRUDSampleHeaderedFrameSocketConnectable = Sup => class extends KoiSocketConnectable(Sup) {
+
+	_displayWaiting(){
+		super._displayWaiting();
+		this.socket.displayWaiting();
+	}
+	_displayError(){
+		super._displayError();
+		this.socket.displayError();
+	}
+	_updateSocket(){
+		super._updateSocket();
+		this.socket.displayNormalState();
+	}
+	...
+	_constructSocket(){
+		return new CRUDSampleHeaderedFrameSocket({
+			holder: this,
+			provider_id: this._getProviderId()
+		});
+	}
+}
+
+export class CRUDSampleHeaderedFrame extends KoiControlConnectorInteractable(
+	CRUDSampleHeaderedFrameSocketConnectable(
+		KoiOperationsInterceptable(
+			KoiPanel
+		)
+	)
+) {
+	...
+}`)</script>
+
+				<p>In the normal state, i.e., when the data is ready for display, the socket should show the table header. To display the header, the socket doesn't need the data loaded by the provider, but it should understand the structure of that data. Information about the data structure can be retrieved from the static getHeader method of the data element. If we were designing a universal socket, we would pass this information to the socket via the component's constructor. However, in this case, we can directly call this static method from within the socket.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_2_3" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_2_3').innerHTML = escapeHTML(`export class CRUDSampleHeaderedFrameSocket extends KoiSocketTemplateCapable(KoiCompositeSocket) {
+	...
+	_getHeaderTemplate(){
+		let head_data = CRUDDataElementListOfNames.getHeader();
+		return '<div class="row">' +
+			'<div class="col col-md-1 border-bottom">' + head_data[0] + '</div>' + 
+			'<div class="col col-md-4 border-bottom">' + head_data[1] + '</div>' +
+			'<div class="col col-md-2 border-bottom">' + head_data[2] + '</div>' +
+			'<div class="col col-md-5 border-bottom">&nbsp;</div>' +
+		'</div>';
+	}
+	getTemplate(){
+		return '<div id="' + this.getID('holder') + '" class="d-none">' +
+			...
+			'<div class="card mb-3" style="padding: 14px;">' +
+				'<div class="crud-sample-table mb-0">' +
+					'<div id="' + this.getID('head') + '" class="fw-bold">' +
+						this._getHeaderTemplate() +
+					'</div>' +
+					CRUDSampleTableContents.getTag({
+						element_id: this.getID('body'), 
+						provider_id: this._provider_id, 
+						element_class: 'mb-0',
+						debug_mode: false
+					}) +
+				'</div>' +
+			'</div>' +
+		'</div>' +
+		...
+	}
+	...
+	constructor({holder, provider_id}){
+		super({holder});
+		this._provider_id = provider_id;
+	}
+}`)</script>
+
+				<p>The next task is how to display the table rows. As previously mentioned, we will delegate this responsibility to the CRUDSampleTableContents component, which can add, remove, and modify its internal components.</p>
+
+				<p>This component will also need to be connected to the data provider, which requires passing the provider’s identifier to the component’s getTag method. This is achieved by modifying the socket's constructor.</p>
+
+				<h4>Displaying Table Rows</h4>
+
+				<p>The CRUDSampleTableContents component, responsible for displaying table rows, needs to react to events from the provider. If the provider receives data and is ready to supply it, the component should clear all previously displayed rows and render the new ones.</p>
+
+				<p>Additionally, the CRUDSampleTableContents component should provide a method for adding rows to the currently displayed set.</p>
+
+				<p>This type of manipulation with internal components can be implemented using the KoiExpansionPanel component, which serves as an excellent foundation for building a row display component.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_3" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_3').innerHTML = escapeHTML(`export class CRUDSampleTableContents extends KoiControlListDataConnectorInteractable(
+	KoiExpansionPanel
+) {
+
+	static getTagName(){
+		return 'crud-sample-table-contents';
+	}
+	...
+	_getArrayToDisplayInSocket(){
+		return this._getItemsFromConnectorData(
+			this._getConnectorDataFromEvent(
+				this._getConnectorEventDetail()
+			)
+		);
+	}
+	_updateSocket(){
+		super._updateSocket();
+		this.socket.removeAllComponents();
+		this.socket.expandSocketWithArray(
+			this._getArrayToDisplayInSocket()
+		);
+	}
+	...
+}`)</script>
+
+				<p>Unlike the CRUDSampleHeaderedFrame, the CRUDSampleTableContents component needs to understand the structure of the data it receives. For instance, it should be aware of the number of records in the provided data. To achieve this, the component implements the KoiControlListDataConnectorInteractable behavior, which includes the _getItemsFromConnectorData method.</p>
+
+				<p>To display the connector’s data, the component doesn’t require its own data. Instead, in the _updateSocket method, it will request the connector's data and pass it to the socket, instructing the socket to clear its contents before rendering the new rows.</p>
+
+				<p>Consequently, the socket must offer two methods: one for clearing its contents and another for displaying a set of rows.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_3_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_3_1').innerHTML = escapeHTML(`class CRUDSampleTableContentsSocket extends KoiEnumeratedCompositeSocket {
+
+	expandSocketWithArray(body_data){
+		for(let row_i = 1; row_i < body_data.length; row_i++){
+			this.expandSocket({
+				item_id: body_data[row_i][0],
+				item_name: body_data[row_i][1],
+				deleted: body_data[row_i][2]
+			});
+		}
+	}
+	removeAllComponents(){
+		for(let key in this._ids){
+			this._removeComponent(key);
+		}
+	}
+	...
+}`)</script>
+
+				<p>In the expandSocketWithArray method, the socket uses the expandSocket method to add rows but transforms the data into a set consisting of item_id, item_name, and deleted. While functional, this approach is less than ideal because the socket shouldn’t need to understand the structure of the records. A better approach would be for the socket to pass the entire record directly to the row component without transformation. This would make the component more flexible. However, to demonstrate how data can be passed to a component via tag attributes, I’ll retain this approach for now — please disregard the limitation for the moment.</p>
+
+				<h4>Displaying an Individual Row</h4>
+
+				<p>What constitutes the content of a table row? It will be a component that includes a provider for modifying and deleting a record, as well as a component that displays the outcomes of these actions. The row itself has a single purpose: to contain these two components. In this case, the row can be represented by a simple div.</p>
+
+				<p>Since we won’t create a dedicated row component, the placement of the record provider and the component responsible for displaying the row’s content will be managed by the socket of the CRUDSampleTableContents component.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_4" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_4').innerHTML = escapeHTML(`class CRUDSampleTableContentsSocket extends KoiEnumeratedCompositeSocket {
+	...
+	_getTagForNewComponent({element_id, item_id, item_name, deleted}){
+		let provider_id = element_id + '_provider';
+		let contents_id = element_id + '_contents';
+		return '<div class="row" id="' + element_id + '">' +
+			CRUDSampleItemProvider.getTag({
+				element_id: provider_id,
+				item_id,
+				item_name,
+				deleted,
+				element_class: 'd-none'
+			}) + 
+			CRUDSampleTableRowContents.getTag({
+				element_id: contents_id,
+				provider_id: provider_id,
+				element_class: ''
+			}) +
+		'</div>';
+	}
+}`)</script>
+
+				<h4>Record Data Object</h4>
+
+				<p>Before designing the record provider, it’s essential to define the structure of the data object responsible for storing and modifying the record's data.</p>
+
+				<p>When interacting with a record, we use its identifier to locate the record, modify the name field, and mark it as deleted using the deleted field. In the table, only these three fields are displayed. As such, the required structure of the record data object comprises item_id, item_name, and deleted. These three elements define the minimal structure necessary for the record data object.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_5" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_5').innerHTML = escapeHTML(`export class CRUDItemData extends KoiData {
+	...
+	constructProperties(){
+		this._properties = {
+			item_id: new KoiDataElementInteger({
+				localized_name: 'item_id',
+				default_value: null,
+				allow_empty: true
+			}),
+			item_name: new (KoiJSONable(KoiDataElementString))({
+				localized_name: 'item_name',
+				default_value: null,
+				allow_empty: true
+			}),
+			deleted: new KoiDataElementBoolean({
+				localized_name: 'deleted',
+				default_value: null,
+				allow_empty: true
+			})
+		};
+	}
+}`)</script>
+
+				<p>Any component implementing the KoiDataCapable behavior and utilizing this data object will automatically retrieve values from tag attributes, convert them to the appropriate data formats, and apply them as default values.</p>
+
+				<p>However, while attributes representing KoiDataElementInteger and KoiDataElementBoolean can be passed directly without issues, string values may contain special characters. Directly including such values in attributes could result in errors. To handle this, the item_name field will leverage the KoiJSONable behavior, which provides methods to safely encode and decode values for attribute use.</p>
+
+				<p>For instance, when developing the row provider, these encoding and decoding methods can be utilized in the tag generation process.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_5_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_5_1').innerHTML = escapeHTML(`export class CRUDSampleItemProvider extends CRUDItemChangeable(KoiProvider) {
+	...
+	static getTag({element_id, item_id, item_name, deleted, debug_mode}){
+		let tag_name = this.getTagName();
+		let _item_id = KoiDataElementInteger.canConvertToAttribute(item_id) ? 
+			'item_id="' + KoiDataElementInteger.convertToAttribute(item_id) + '"' : '';
+		let _item_name = (KoiJSONable(KoiDataElementString)).canConvertToAttribute(item_name) ? 
+			'item_name="' + (KoiJSONable(KoiDataElementString)).convertToAttribute(item_name) + '"' : '';
+		let _deleted = KoiDataElementBoolean.canConvertToAttribute(deleted) ? 
+			'deleted="' + KoiDataElementBoolean.convertToAttribute(deleted) + '"' : '';
+		let str_debug_mode = debug_mode ? 'debug_mode="true"' : '';
+		return '<' + tag_name + ' id="' + element_id + 
+			'" ' + _item_id + 
+			' ' + _item_name + 
+			' ' + _deleted + 
+			' ' + str_debug_mode +
+			'></' + tag_name + '>';
+	}
+	...
+}`)</script>
+
+				<p>Although passing data through attributes is not an ideal approach, it serves as a convenient demonstration. In a production environment, I would prefer to use the KoiTransmitter component for data handling. However, for the sake of this example, we’ll proceed with attribute-based data passing.</p>
+
+				<p>The KoiData class does not include methods for retrieving and updating the values of its data elements. It is expected that these methods, for ease of use, will correspond directly to the names of the data elements. These methods must be explicitly implemented within the specific data object.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_5_2" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_5_2').innerHTML = escapeHTML(`export class CRUDItemData extends KoiData {
+	...
+	getItemName(){
+		return this._getValueOrDefaultValue('item_name');
+	}
+
+	setItemName(new_name){
+		this._properties['item_name'].setValue(new_name);
+	}
+	...
+}`)</script>
+
+				<p>Such methods are essential for the record provider, as they allow it to define functionality that not only modifies the data but also emits signals when changes occur.</p>
+
+				<h4>Record Provider</h4>
+
+				<p>The record provider is designed to simulate the modification and deletion of records. To enable this functionality, we will implement behavior similar to the data-loading behavior previously defined for the main provider.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_6" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_6').innerHTML = escapeHTML(`const CRUDItemChangeable = Sup => class extends Sup {
+
+	_query(binded_callback){
+		setTimeout(binded_callback, 2000);
+	}
+	_onChangeItemNameSuccess(item_name){
+		...
+		this.data.setItemName(item_name);
+		this._updateSomethingWhenChanged();
+		this._onAfterChanged();
+	}
+	attemptChangeItemName(item_name){
+		if(!this.isReady()){
+			return;
+		}
+		this._setStateCode(KoiState.getLoadingCode());
+		this._onAfterChanged();
+		this._query(this._onChangeItemNameSuccess.bind(this, item_name));
+	}
+	...
+}`)</script>
+
+				<p>For now, we’ll operate under the assumption that the record provider will handle only one request at a time. To ensure this, the provider's state will be checked before initiating a request. If the provider is already busy, the request will not be sent.</p>
+
+				<p>When a result is received, the provider will update its internal data and trigger an event. The row content display component, which is subscribed to this event, will then update its display to reflect the changes.</p>
+
+				<h4>Row Content Display Component</h4>
+
+				<p>The CRUDSampleTableRowContents component is tasked with displaying the state of the record provider. If the provider is in the process of waiting for a server request result, the component should show a loading notification. This can be implemented in the same manner as before, using a set of <div> elements whose visibility is toggled based on the provider's state.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_7" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_7').innerHTML = escapeHTML(`export class CRUDSampleTableRowContentsSocket extends KoiSocketTemplateCapable(KoiCompositeSocket) {
+	...
+	displayWaiting(){
+		this._hide('row');
+		this._hide('error');
+		this._show('loading');
+	}
+	...
+}
+
+export class CRUDSampleTableRowContents extends KoiSocketConnectable(
+	...
+) {
+
+	_displayWaiting(){
+		super._displayWaiting();
+		this.socket.displayWaiting();
+	}
+	...
+	_constructSocket(){
+		return new CRUDSampleTableRowContentsSocket({
+			holder: this
+		});
+	}
+
+}`)</script>
+
+				<p>This component does not maintain its own data. Instead, it relies on the provider's data for display purposes. Furthermore, if the deleted field in the data is true, the component's socket will update the visibility of the component accordingly.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_7_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_7_1').innerHTML = escapeHTML(`export class CRUDSampleTableRowContentsSocket extends KoiSocketTemplateCapable(KoiCompositeSocket) {
+	...
+	displayItemProperties({item_id, item_name, deleted}){
+		this._setInnerHTML('item_id', item_id);
+		this._setInnerHTML('item_name', item_name);
+		this._setInnerHTML('deleted', deleted);
+		if(deleted){
+			this._holder.hide();
+		}
+	}
+	...
+}
+
+export class CRUDSampleTableRowContents extends KoiSocketConnectable(
+	CRUDItemDataConnectorInteractable(
+		...
+	)
+) {
+	...
+	_updateSocket(){
+		super._updateSocket();
+		this.socket.displayItemProperties(
+			this._getItemPropertiesFromConnectorEventDetail(
+				this._getConnectorEventDetail()
+			)
+		);
+		this.socket.displayNormalState();
+	}
+	...
+}`)</script>
+
+				<p>This introduces a situation where data exchange occurs between the provider and the component, necessitating a shared understanding of the data structure. While the provider inherently understands the data structure due to ownership, the component must rely on an interface to access this information. This interface is provided by a connector. By implementing the CRUDItemDataConnectorInteractable behavior, the component gains the ability to use the _getItemPropertiesFromConnectorEventDetail method to interact seamlessly with the provider's data.</p>
+
+				<h4>Connector for the Record Provider</h4>
+
+				<p>While standard connectors for data objects are already defined in the KoiCom library, a specialized connector needs to be implemented for the provider working with the record data object.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_8" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_8').innerHTML = escapeHTML(`export class CRUDItemDataConnector extends KoiSingleConnector {
+	...
+	_getEventDetails(){
+		if(!this.canProvideData()){
+			return undefined;
+		}
+		return super._getEventDetails();
+	}
+
+}`)</script>
+
+				<p>This connector will enable the component to access the provider's event_details object, which contains a reference to the provider's data object. Additionally, we will introduce the CRUDItemDataConnectorInteractable behavior, allowing the component to seamlessly interact with the provider's data object.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_8_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_8_1').innerHTML = escapeHTML(`export const CRUDItemDataConnectorInteractable = Sup => class extends KoiControlConnectorInteractable(Sup) {
+
+	_getItemPropertiesFromConnectorEventDetail(event_detail){
+		return event_detail.data.getItemProperties();
+	}
+	...
+	_constructConnector(){
+		return new CRUDItemDataConnector({
+			holder: this, 
+			id: this._getProviderId()
+		});
+	}
+
+}`)</script>
+
+				<p>This setup ensures that the component has access to behavior-specific methods. These methods, in turn, utilize the provider's data object methods, which are defined thanks to the integration of the CRUDItemDataConnector. This structured approach clarifies the origin and functionality of methods like getItemProperties, making their purpose and usage intuitive and easy to grasp.</p>
+
+				<h4>Modifying a Record</h4>
+
+				<p>The controls for editing a record will be housed within the row content display component. This creates a two-way relationship between the component and the provider. On one hand, the component updates its display when the provider triggers an event indicating that its data has been modified. On the other hand, the component sends commands to the provider to update the data.</p>
+
+				<p>To enable the component to send modification commands to the provider, an appropriate method is required. This method will be defined in the CRUDItemDataConnectorInteractable behavior, with the command transmitted via the connector.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_9" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_9').innerHTML = escapeHTML(`export const CRUDItemDataConnectorInteractable = Sup => class extends KoiControlConnectorInteractable(Sup) {
+	...
+	_attemptChangeItemName(new_name){
+		this._connector.attemptChangeItemName(new_name);
+	}
+
+	_attemptDeleteItem(){
+		this._connector.attemptDeleteItem();
+	}
+	...
+}
+
+export class CRUDItemDataConnector extends KoiSingleConnector {
+
+	attemptChangeItemName(new_name){
+		this._item.attemptChangeItemName(new_name);
+	}
+
+	attemptDeleteItem(){
+		this._item.attemptDeleteItem();
+	}
+	...
+}`)</script>
+
+				<p>This approach highlights how a connector can serve dual purposes: not only facilitating data retrieval but also enabling provider management, akin to how sockets are controlled.</p>
+
+				<p>Next, we will design a component that can invoke provider management methods directly from the row content display component.</p>
+
+				<h4>Record Control Panel</h4>
+
+				<p>Returning to the row content display component's socket, we will embed a CRUDSampleControlPanel component in each row.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_10" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_10').innerHTML = escapeHTML(`export class CRUDSampleTableRowContentsSocket extends KoiSocketTemplateCapable(KoiCompositeSocket) {
+	...
+	getTemplate(){
+		return '<div id="' + this.getID('row') + '" class="row">' +
+			'<div id="' + this.getID('item_id') + '" class="col col-md-1 border-bottom">id</div>' +
+			'<div id="' + this.getID('item_name') + '" class="col col-md-4 border-bottom">name</div>' +
+			'<div id="' + this.getID('deleted') + '" class="col col-md-2 border-bottom">del</div>' +
+			'<div id="' + this.getID('controls') + '" class="col col-md-5 border-bottom">' +
+				CRUDSampleControlPanel.getTag({
+					element_id: this._holder.id + '_control_panel',
+					provider_id: this._holder._getProviderId()
+				}) +
+			'</div>' +
+		'</div>' +
+		...
+	}
+	...
+}`)</script>
+
+				<p>This control panel will consist of three dialog components. The first dialog prompts the user to select an action to perform on the record. The second dialog confirms the deletion of the record. The third dialog asks the user to provide a new value for the item_name field.</p>
+
+				<p>The primary responsibility of the control panel is to switch between these dialogs based on user commands.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_10_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_10_1').innerHTML = escapeHTML(`export class CRUDSampleControlPanelSocket extends KoiSocketTemplateCapable(KoiCompositeSocket) {
+
+	getTemplate(){
+		return CRUDSampleItemActionsDialog.getTag({
+			element_id: this.getID('buttons'),
+			...
+		}) +
+		CRUDSampleItemDeleteDialog.getTag({
+			element_id: this.getID('delete_dialog'),
+			...
+		}) +
+		CRUDSampleItemEditDialog.getTag({
+			element_id: this.getID('edit_dialog'),
+			...
+		});
+	}
+	...
+	showEditDialog(){
+		this._hide('buttons');
+		this._show('edit_dialog');
+		this._hide('delete_dialog');
+	}
+	...
+}
+
+const CRUDSampleControlPanelSocketConnectable = Sup => class extends KoiSocketConnectable(Sup) {
+
+	_constructSocket(){
+		return new CRUDSampleControlPanelSocket({
+			holder: this,
+			provider_id: this.getAttribute('provider_id')
+		});
+	}
+	...
+	_showEditDialog(){
+		this.socket.showEditDialog();
+	}
+	...
+}
+
+export class CRUDSampleControlPanel extends CRUDSampleControlPanelSocketConnectable(
+	...
+) {
+	...
+}`)</script>
+
+				<p>Both buttons in the action selection dialog will be directly intercepted by the CRUDSampleControlPanel. Upon processing the events triggered by the user's action choice, the panel will display the corresponding dialog.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_10_2" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_10_2').innerHTML = escapeHTML(`export class CRUDSampleControlPanel extends CRUDSampleControlPanelSocketConnectable(
+	KoiOperationsInterceptable(
+		KoiPanel
+	)
+) {
+	...
+	_stopPropagationWhenOperated(event){
+		if(event.detail.data.getAction() == CRUDSampleItemActionsDialog.getApplyActionCode()){
+			event.stopPropagation();
+		}else if(event.detail.data.getAction() == CRUDSampleItemActionsDialog.getCancelActionCode()){
+			event.stopPropagation();
+		}else if(event.detail.data.getAction() == CRUDSampleItemEditDialog.getCancelActionCode()){
+			event.stopPropagation();
+		}else if(event.detail.data.getAction() == CRUDSampleItemDeleteDialog.getCancelActionCode()){
+			event.stopPropagation();
+		}
+	}
+
+	_handleOperated(event_detail){
+		if(event_detail.data.getAction() == CRUDSampleItemActionsDialog.getApplyActionCode()){
+			this._showEditDialog();
+		}else if(event_detail.data.getAction() == CRUDSampleItemActionsDialog.getCancelActionCode()){
+			this._showDeleteDialog();
+		}else{
+			this._showButtons();
+		}
+	}
+
+}`)</script>
+
+				<p>Similarly, events triggered by pressing the cancel button in either the delete or edit dialog are also processed. The currently active dialog is hidden, and the action selection dialog reappears.</p>
+
+				<p>To enable CRUDSampleControlPanel to intercept events, it must implement the KoiOperationsInterceptable behavior and define the _handleOperated method.</p>
+
+				<p>To prevent events that the panel can process from propagating further, it also implements the _stopPropagationWhenOperated behavior.</p>
+
+				<p>The panel identifies intercepted events by retrieving the command using the getAction method and comparing it to the action codes provided by the static methods of the dialogs.</p>
+
+				<p>Events that the panel cannot process are passed along, encapsulating the dialogs as a cohesive, complex dialog system. This system does not emit events if no changes are made by the user, but it triggers an event containing either a modification or deletion command when applicable.</p>
+
+				<p>Since the dialogs themselves are straightforward, we can now proceed to explaining how these two commands are executed.</p>
+
+				<h4>Modifying and Deleting Records</h4>
+
+				<p>Commands from the record control panel are expected to be sent to the record provider, which will then handle making the appropriate server requests. This can be achieved in one of two ways:</p>
+
+				<p><b>1. Direct Transmission by the Record Control Panel</b> The control panel could directly issue commands to the provider. However, this is not ideal because the control panel's role does not include interacting with the provider. Adding a connection to the provider solely for transmitting commands would unnecessarily expand its responsibilities.</p>
+
+				<p><b>Relay Through the Row Content Display Panel</b> A better approach is for the row content display panel to receive events from the control panel and forward commands to the provider.</p>
+
+				<p>To implement this, we will update the CRUDSampleTableRowContents component to include the KoiOperationsInterceptable behavior.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_11" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_11').innerHTML = escapeHTML(`export class CRUDSampleTableRowContents extends KoiSocketConnectable(
+	CRUDItemDataConnectorInteractable(
+		KoiOperationsInterceptable(
+			KoiPanel
+		)
+	)
+) {
+	...
+	_handleOperated(event_detail){
+		if(this._getItemActionFromOperationData(event_detail.data) == CRUDSampleItemEditDialog.getApplyActionCode()){
+			this._attemptChangeItemName(
+				this._getItemValueFromOperationData(event_detail.data)
+			);
+		}else if(this._getItemActionFromOperationData(event_detail.data) == CRUDSampleItemDeleteDialog.getApplyActionCode()){
+			this._attemptDeleteItem();
+		}
+	}
+	...
+}`)</script>
+
+				<p>As the CRUDSampleTableRowContents component already implements the CRUDItemDataConnectorInteractable behavior, it can leverage its existing methods, _attemptChangeItemName and _attemptDeleteItem, to forward commands to the provider.</p>
+
+				<p>With this implementation, we have completed the functionality for modifying and deleting records. The next step is to address adding new records.</p>
+
+				<h4>Add Record Panel</h4>
+
+				<p>Sending a request to the server to add a record can be handled independently of fetching the list of records. However, it’s not ideal to allow users to add records before the list is loaded.</p>
+
+				<p>To address this, the component responsible for adding records should reflect the state of the data list provider. One approach would be to connect this component to the provider similarly to how we connected the CRUDSampleHeaderedFrame panel earlier. However, a simpler solution is to embed the add functionality directly into the CRUDSampleHeaderedFrame component, achieving the same outcome.</p>
+
+				<p>In this approach, the add record functionality can be represented by a div that encapsulates the add record panel (containing the add dialog) and the new record provider.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_12" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_12').innerHTML = escapeHTML(`export class CRUDSampleHeaderedFrameSocket extends KoiSocketTemplateCapable(KoiCompositeSocket) {
+	...
+	getTemplate(){
+		return '<div id="' + this.getID('holder') + '" class="d-none">' +
+			'<div class="card mb-3" style="padding: 14px;">' +
+				CRUDSampleAppendPanel.getTag({
+					element_id: this._holder.id + '_add_panel', 
+					provider_id: this.getID('append_provider'),
+					element_class: ''
+				}) +
+				CRUDSampleAppendItemProvider.getTag({
+					element_id: this.getID('append_provider'),
+					item_id: 0,
+					item_name: '',
+					deleted: false
+				}) +
+			'</div>' +
+			...
+		'</div>' +
+		...
+	}
+	...
+}`)</script>
+
+				<p>The new record provider works similarly to the record provider but with a few distinctions:</p>
+
+				<p>1. Unlike the record provider, the new record provider doesn’t rely on initial values from the loaded list. It can be initialized with an empty string as the default value for item_name.</p>
+
+				<p>2. The new record provider receives the data for the newly created record from the server, including a server-generated ID. To simulate this process, the provider requires functionality to mimic ID generation.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_12_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_12_1').innerHTML = escapeHTML(`const CRUDItemAppendable = Sup => class extends Sup {
+	...
+	_onAppendItemSuccess(item_name){
+		...
+		this.data.setItemId(this._next_free_id);
+		this.data.setItemName(item_name);
+		this.data.setDeleted(false);
+		this._next_free_id++;
+		this._updateSomethingWhenChanged();
+		this._onAfterChanged();
+	}
+	...
+	_setInitialValueForTheNextFreeId(){
+		this._next_free_id = CRUDDataElementListOfNames.getInitialNextFreeId();
+	}
+	_onConstructed(){
+		super._onConstructed();
+		this._setInitialValueForTheNextFreeId();
+	}
+}`)</script>
+
+				<p>The CRUDSampleAppendPanel connects to the new record provider and displays its state, much like the row content display component reflects the state of the record provider.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_12_2" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_12_2').innerHTML = escapeHTML(`export class CRUDSampleAppendPanelSocket extends KoiSocketTemplateCapable(KoiCompositeSocket) {
+	...
+	displayWaiting(){
+		this._hide('dialog');
+		this._hide('error');
+		this._show('spinner');
+	}
+	...
+}
+
+export class CRUDSampleAppendPanel extends ... {
+	...
+	_displayWaiting(){
+		super._displayWaiting();
+		this.socket.displayWaiting();
+	}
+	...
+}`)</script>
+
+				<p>The add record panel features a standard dialog with a text input field.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_12_3" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_12_3').innerHTML = escapeHTML(`export class CRUDSampleAppendPanelSocket extends KoiSocketTemplateCapable(KoiCompositeSocket) {
+	...
+	getTemplate(){
+		return '<div class="d-none" id="' + this.getID('dialog') + '">' +
+			CRUDSampleAppendItemDialog.getTag({
+				element_id: this._holder.id + '_dialog',
+				message: 'Append an Item',
+				apply_caption: 'Append',
+				cancel_caption: 'Cancel',
+				element_class: ''
+			}) +
+		'</div>' +
+		...;
+	}
+	...
+}`)</script>
+
+				<p>This design allows the add record panel to display the provider’s state, capture user input, and emit an event containing the entered value.</p>
+
+				<p>Previously, when creating the row content display panel, we modified the CRUDItemDataConnectorInteractable behavior to establish a two-way connection between the component and the provider. This enabled the provider to send a request to the server to modify a record based on user input events. This time, I’d like to demonstrate how to set up this connection through a component that combines the add record panel with the add record provider.</p>
+
+				<h4>Adding a Record</h4>
+
+				<p>A two-way connection implies that the events of a component control the same provider from which the component retrieves its displayed data. However, more commonly, a component’s events are used to manage other components.</p>
+
+				<p>In such cases, a third component that integrates the provider and the display component should handle event processing. This third component acts as a controller. In our case, the CRUDSampleHeaderedFrame component will serve as the controller, and we will equip it with the KoiOperationsInterceptable behavior.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_13" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_13').innerHTML = escapeHTML(`export class CRUDSampleHeaderedFrameSocket extends KoiSocketTemplateCapable(KoiCompositeSocket) {
+	...
+	attemptAppendItem(item_name){
+		this._items['append_provider'].attemptAppendItem(item_name);
+	}
+	...
+}
+
+export const CRUDSampleHeaderedFrameSocketConnectable = Sup => class extends KoiSocketConnectable(Sup) {
+	...
+	_attemptAppendItem(item_name){
+		this.socket.attemptAppendItem(item_name);
+	}
+	...
+}
+
+export class CRUDSampleHeaderedFrame extends KoiControlConnectorInteractable(
+	CRUDSampleHeaderedFrameSocketConnectable(
+		KoiOperationsInterceptable(
+			KoiPanel
+		)
+	)
+) {
+	...
+	_handleOperated(event_detail){
+		...
+		if(this._getItemActionFromOperationData(event_detail.data) == CRUDSampleAppendItemDialog.getApplyActionCode()){
+			this._attemptAppendItem(
+				this._getItemValueFromOperationData(event_detail.data)
+			);
+		}
+	}
+
+}`)</script>
+
+				<p>Upon intercepting an event from the add record panel, the CRUDSampleHeaderedFrame component will extract the user-entered value from the event and pass it to the socket, which then calls the provider’s attemptAppendItem method.</p>
+
+				<p>Let’s consider this design. On one hand, we’ve removed the overly tight coupling between the provider and the add record panel, making the connection one-way. On the other hand, we’ve overloaded the CRUDSampleHeaderedFrame component with excessive behavior. If CRUDSampleHeaderedFrame were to implement a wide range of diverse behaviors, it could become confusing. This leads us to the idea of encapsulating such behavior within a separate component inside CRUDSampleHeaderedFrame. I’ll leave this as an exercise for you to explore.</p>
+
+				<p>Now, returning to the provider: after receiving the user input, the provider sends a request to the server. Once the response is received, it updates its data and triggers a koi-changed event. At this moment, no component is subscribed to this event, so the new row won’t appear in the table.</p>
+
+				<p>We will again use CRUDSampleHeaderedFrame as the controller. For CRUDSampleHeaderedFrame to intercept the provider’s data change event, the event must propagate. However, the koi-changed event currently has its bubbles property set to false. Let’s fix that.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_13_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_13_1').innerHTML = escapeHTML(`const CRUDItemAppendable = Sup => class extends Sup {
+	...
+	_constructChangedEvent(){
+		return new CustomEvent('koi-changed', {
+			bubbles: true,
+			composed: false,
+			detail: this._changed_event_details
+		});
+	}
+	...
+}
+
+export class CRUDSampleAppendItemProvider extends CRUDItemAppendable(KoiProvider) {
+	...
+}`)</script>
+
+				<p>Next, we’ll ensure that CRUDSampleHeaderedFrame subscribes not only to the koi-operated event but also to the koi-changed event.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_13_2" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_13_2').innerHTML = escapeHTML(`export class CRUDSampleHeaderedFrame extends ... {
+	...
+	_getInterceptableOperateEventCode(){
+		return ['koi-operated', 'koi-changed'];
+	}
+	...
+}`)</script>
+
+				<p>Finally, we’ll make sure that CRUDSampleHeaderedFrame recognizes this event and instructs the component displaying the table rows to add a row with the values received in the event.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_13_3" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_13_3').innerHTML = escapeHTML(`export class CRUDSampleHeaderedFrameSocket extends KoiSocketTemplateCapable(KoiCompositeSocket) {
+	...
+	appendItem(item_properties){
+		this._items['body'].attemptExpandSocket(item_properties);
+	}
+	...
+}
+
+export const CRUDSampleHeaderedFrameSocketConnectable = Sup => class extends KoiSocketConnectable(Sup) {
+	...
+	_appendItem(item_properties){
+		this.socket.appendItem(item_properties);
+	}
+	...
+}
+
+export class CRUDSampleHeaderedFrame extends CRUDSampleHeaderedFrameSocketConnectable(
+	KoiOperationsInterceptable(
+		...
+	)
+) {
+	...
+	_handleOperated(event_detail){
+		if(event_detail.element_id == this.socket.getID('append_provider')){
+			if(event_detail.state.isReady()){
+				this._appendItem(
+					event_detail.data.getItemProperties()
+				);
+			}
+		}
+		...
+	}
+	...
+}`)</script>
+
+				<p>This method works, and I wanted to demonstrate it, but note that by doing so, we’ve made significant changes to existing behaviors, which alters their original intent. For example, the KoiOperationsInterceptable behavior is designed to work with a single data object, but in the _handleOperated method, we’re working with a completely different object. This raises the question of how to solve this problem in a production project without altering the existing behaviors.</p>
+
+				<p>I’ll add that if CRUDSampleHeaderedFrame adds a row, it does so in response to a specific command. Currently, CRUDSampleHeaderedFrame reacts to an event from the provider, meaning it knows too much about the provider. If a similar command were to come from another component, we’d need to define yet another similar reaction. To avoid this, it’s necessary to formalize the command and make CRUDSampleHeaderedFrame respond to this command. I’ll leave this for you to consider.</p>
+
+				<p>For now, that’s all. I’ve demonstrated what I intended to. The final CRUD component is ready. From here, it can be endlessly improved, refined, and polished.</p>
+
+			</section>
+		</div>
+		<footer class="main-footer">
+			<div class="float-end">
+				<b>Version</b> 1.13
+			</div>
+			MIT &copy; Koi 2025
+		</footer>
+	</docs-main-wrapper>
+
+<script type="module">
+	import { DocsMainWrapper } from "../../js/docs/controls/panels/docs_main_wrapper.js";
+	if (customElements.get(DocsMainWrapper.getTagName()) === undefined) {
+		customElements.define(DocsMainWrapper.getTagName(), DocsMainWrapper);
+	}
+	import { DocsMainSidebar } from "../../js/docs/controls/sidebars/docs_main_sidebar.js";
+	if (customElements.get(DocsMainSidebar.getTagName()) === undefined) {
+		customElements.define(DocsMainSidebar.getTagName(), DocsMainSidebar);
+	}
+	import { DocsIdLinkForHeader } from "../../js/docs/controls/buttons/docs_idlink_for_header.js";
+	if (customElements.get(DocsIdLinkForHeader.getTagName()) === undefined) {
+		customElements.define(DocsIdLinkForHeader.getTagName(), DocsIdLinkForHeader);
+	}
+
+	import { CRUDSamplePanel } from "../../js/crud/controls/panels/crud_sample_panel.js";
+	if (customElements.get(CRUDSamplePanel.getTagName()) === undefined) {
+		customElements.define(CRUDSamplePanel.getTagName(), CRUDSamplePanel);
+	}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+/*
+ * Component: Sidebar
+ * The left sidebar.
+ * It can be minimized to the left.
+ * On small screens it is shown when minimised and hides when expanded.
+ * 
+ */
+.main-sidebar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding-top: 0;
+	min-height: 100%;
+	width: 230px;
+	z-index: 810;
+	-webkit-transition: -webkit-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+	-moz-transition: -moz-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+	-o-transition: -o-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+	transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+	background-color: #f9fafc;
+	border-right: 1px solid #d2d6de;
+}
+
+@media (max-width: 767px) {
+	.main-sidebar {
+		-webkit-transform: translate(-230px, 0);
+		-ms-transform: translate(-230px, 0);
+		-o-transform: translate(-230px, 0);
+		transform: translate(-230px, 0);
+	}
+}
+
+@media (max-width: 768px) {
+	.sidebar-collapse .main-sidebar {
+		-webkit-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		-o-transform: translate(0, 0);
+		transform: translate(0, 0);
+		width: 230px !important;
+	}
+}
+
+@media (min-width: 768px) {
+	.sidebar-collapse .main-sidebar {
+		-webkit-transform: translate(-230px, 0);
+		-ms-transform: translate(-230px, 0);
+		-o-transform: translate(-230px, 0);
+		transform: translate(-230px, 0);
+	}
+}

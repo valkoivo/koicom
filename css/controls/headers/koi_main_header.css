@@ -1,0 +1,141 @@
+/*
+ * Component: Main Header
+ */
+
+.koi-main-header{
+	position: sticky;
+	max-height: 100px;
+	z-index: 1030;
+	top: 0;
+	left: 0;
+}
+
+/*
+ * Component: Main Header Logo
+ * The Logo is positioned in the left part of the header on wide screens
+ * and has the width of the Side Bar.
+ * On small screens it has the full width.
+ * The image inside can be changed from logo-lg to logo-mini using JS.
+ */
+
+.koi-main-header .logo {
+	-webkit-transition: width 0.3s ease-in-out;
+	-o-transition: width 0.3s ease-in-out;
+	transition: width 0.3s ease-in-out;
+	display: block;
+	float: left;
+	height: 50px;
+	font-size: 20px;
+	line-height: 50px;
+	text-align: center;
+	width: 180px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 0 15px;
+	font-weight: 300;
+	overflow: hidden;
+	background-color: #f39c12;
+	color: #ffffff;
+	border-bottom: 0 solid transparent;
+}
+
+@media (max-width: 767px) {
+	.koi-main-header .logo{
+		width: 100%;
+		float: none;
+	}
+}
+
+.koi-main-header .logo img {
+	padding: 4px;
+	object-fit: contain;
+	margin: 0 auto;
+}
+
+.koi-main-header .logo .logo-lg {
+	display: block;
+}
+
+.koi-main-header .logo .logo-lg img {
+	max-width: 180px;
+	max-height: 50px;
+}
+
+.koi-main-header .logo .logo-mini {
+	display: none;
+}
+
+.koi-main-header .logo .logo-mini img {
+	max-width: 50px;
+	max-height: 50px;
+}
+
+/*
+ * Component: Main Header Nav Bar
+ * It is on the right side of the header on large screens.
+ * It is invisible on small screens.
+ */
+
+.koi-main-header .navbar {
+	-webkit-transition: margin-left 0.3s ease-in-out;
+	-o-transition: margin-left 0.3s ease-in-out;
+	transition: margin-left 0.3s ease-in-out;
+	margin-bottom: 0;
+	margin-left: 230px;
+	border: none;
+	min-height: 50px;
+	border-radius: 0;
+	background-color: #f39c12;
+}
+
+@media (max-width: 767px) {
+
+	.koi-main-header .navbar {
+		display: none;
+	}
+}
+
+/*
+ * Component: Main Header Sidebar Hamburger Button.
+ * The button is on the left of the header on both screen sizes.
+ */
+
+.koi-main-header .idlink-for-header {
+	float: left;
+	display: block;
+	width: 50px;
+	height: 50px;
+}
+
+.koi-main-header .idlink-for-header a{
+	padding: 15px 15px;
+	width: 50px;
+	font-family: fontAwesome;
+	color: #ffffff;
+	text-align: center;
+	background-color: #f39c12;
+	background-image: none;
+	display: block;
+}
+
+.koi-main-header .idlink-for-header a:before {
+	content: "\f0c9";
+}
+
+.koi-main-header .idlink-for-header a:hover {
+	color: #f6f6f6;
+	background-color: #e08e0b;
+}
+
+.koi-main-header .idlink-for-header a:focus,
+.koi-main-header .idlink-for-header a:active {
+	background-color: #e08e0b;
+}
+
+@media (max-width: 767px) {
+	.koi-main-header .idlink-for-header {
+		position: absolute;
+		z-index: 1100;
+		left: 0;
+		top: 0;
+	}
+}

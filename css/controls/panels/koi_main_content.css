@@ -1,0 +1,36 @@
+/*
+ * Content Wrapper - contains the main content
+ */
+.koi-main-content{
+	-webkit-transition: -webkit-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+	-moz-transition: -moz-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+	-o-transition: -o-transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+	transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+	margin-left: 230px;
+	z-index: 820;
+}
+
+@media (max-width: 767px) {
+	.koi-main-content{
+		margin-left: 0;
+	}
+}
+
+.koi-main-content {
+	min-height: calc(100vh - 101px);
+	background-color: #fff;
+	z-index: 800;
+}
+
+@media (min-width: 768px) {
+	.sidebar-collapse .koi-main-content{
+		margin-left: 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.sidebar-collapse .koi-main-content{
+		margin-left: 0 !important;
+		z-index: 840;
+	}
+}

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>KoiCom</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/x-icon" href="../../favicon.ico">
+
+	<!-- Bootstrap -->
+	<link href="../../libs/bootstrap/css/bootstrap.min.css" type="text/css" data-template-style="true" rel="stylesheet" />
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Layout and NonJS Components -->
+	<link href="../../css/template/layout.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/template/typo.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/headers/koi_main_header.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/footers/koi_main_footer.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/panels/koi_main_content.css" type="text/css" rel="stylesheet" />
+
+	<!-- Web Components -->
+	<link href="../../css/controls/buttons/koi_idlink_for_header.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/sidebars/koi_main_sidebar.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/panels/koi_sidebar_contents.css" type="text/css" rel="stylesheet" />
+
+	<!-- escapeHTML is used to show JavaScript code in Cards -->
+	<script>
+		const escapeHTML = str => str.replace(/[&<>'"]/g, 
+			tag => ({
+			'&': '&amp;',
+			'<': '&lt;',
+			'>': '&gt;',
+			"'": '&#39;',
+			'"': '&quot;'
+		}[tag]));
+	</script>
+
+</head>
+<body>
+	<docs-main-wrapper id="koi_main_wrapper" class="wrapper">
+		<header class="koi-main-header">
+
+			<docs-idlink-for-header class="idlink-for-header" id="koi_idlink_for_header" item_action="toggle_sidebar"><span class="d-none">Show Sidebar Menu</span></docs-idlink-for-header>
+
+			<a href="../../index.html" class="logo">
+				<span class="logo-mini d-none"><img src="../../img/logo.png" class="favicon" alt="KoiCom" /></span>
+				<span class="logo-lg">KoiCom</span>
+			</a>
+			<nav class="navbar"></nav>
+		</header>
+		<docs-main-sidebar id="simple_sidebar" class="main-sidebar">
+			<div class="sidebar-contents" id="koi_sidebar_contents"><section class="sidebar"><ul class="sidebar-menu"><li class="header"><a href="../../index.html">INTRODUCTION</a></li></ul><ul class="sidebar-menu"><li><a aria-expanded="true" data-bs-toggle="collapse" href="#collapse_library"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg> <span>Library</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_library" class="collapse show"><li><a href="../../docs/book/1_overview.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"></path></svg> <span>Overview</span></a></li><li><a href="../../docs/book/2_structure.html"><svg height="16" width="18" viewBox="0 0 576 512"><path d="M208 80c0-26.5 21.5-48 48-48h64c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-8v40H464c30.9 0 56 25.1 56 56v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H464c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-4.4-3.6-8-8-8H312v40h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H256c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V280H112c-4.4 0-8 3.6-8 8v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-30.9 25.1-56 56-56H264V192h-8c-26.5 0-48-21.5-48-48V80z"></path></svg> <span>Structure</span></a></li><li><a href="../../docs/book/3_usage.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M416 0C400 0 288 32 288 176V288c0 35.3 28.7 64 64 64h32V480c0 17.7 14.3 32 32 32s32-14.3 32-32V352 240 32c0-17.7-14.3-32-32-32zM64 16C64 7.8 57.9 1 49.7 .1S34.2 4.6 32.4 12.5L2.1 148.8C.7 155.1 0 161.5 0 167.9c0 45.9 35.1 83.6 80 87.7V480c0 17.7 14.3 32 32 32s32-14.3 32-32V255.6c44.9-4.1 80-41.8 80-87.7c0-6.4-.7-12.8-2.1-19.1L191.6 12.5c-1.8-8-9.3-13.3-17.4-12.4S160 7.8 160 16V150.2c0 5.4-4.4 9.8-9.8 9.8c-5.1 0-9.3-3.9-9.8-9L127.9 14.6C127.2 6.3 120.3 0 112 0s-15.2 6.3-15.9 14.6L83.7 151c-.5 5.1-4.7 9-9.8 9c-5.4 0-9.8-4.4-9.8-9.8V16zm48.3 152l-.3 0-.3 0 .3-.7 .3 .7z"></path></svg> <span>Usage</span></a></li><li><a href="../../docs/book/4_inheritance.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L400 115.9V320c0 8.8-7.2 16-16 16zM192 384H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16H96V128H64z"></path></svg> <span>Inheritance</span></a></li><li><a href="../../docs/book/5_composition.html"><svg height="16" width="14" viewBox="0 0 576 512"><path d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z"></path></svg> <span>Composition</span></a></li><li><a href="../../docs/book/6_mvc.html"><svg height="16" width="14" viewBox="0 0 640 512"><path d="M0 32C0 14.3 14.3 0 32 0H48c44.2 0 80 35.8 80 80V368c0 8.8 7.2 16 16 16H608c17.7 0 32 14.3 32 32s-14.3 32-32 32H541.3c1.8 5 2.7 10.4 2.7 16c0 26.5-21.5 48-48 48s-48-21.5-48-48c0-5.6 1-11 2.7-16H253.3c1.8 5 2.7 10.4 2.7 16c0 26.5-21.5 48-48 48s-48-21.5-48-48c0-5.6 1-11 2.7-16H144c-44.2 0-80-35.8-80-80V80c0-8.8-7.2-16-16-16H32C14.3 64 0 49.7 0 32zM432 96V56c0-4.4-3.6-8-8-8H344c-4.4 0-8 3.6-8 8V96h96zM288 96V56c0-30.9 25.1-56 56-56h80c30.9 0 56 25.1 56 56V96 320H288V96zM512 320V96h16c26.5 0 48 21.5 48 48V272c0 26.5-21.5 48-48 48H512zM240 96h16V320H240c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48z"></path></svg> <span>MVC</span></a></li><li><a href="../../docs/book/7_workflow.html"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M32 48c0 8.8 7.2 16 16 16H64V192H32c-8.8 0-16 7.2-16 16s7.2 16 16 16h96c8.8 0 16-7.2 16-16s-7.2-16-16-16H96V48c0-8.8-7.2-16-16-16H48c-8.8 0-16 7.2-16 16zM192 96c0 8.8 7.2 16 16 16H496c8.8 0 16-7.2 16-16s-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm0 160c0 8.8 7.2 16 16 16H496c8.8 0 16-7.2 16-16s-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm0 160c0 8.8 7.2 16 16 16H496c8.8 0 16-7.2 16-16s-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zM58.7 323.9c11.1-11.1 29.2-10.5 39.6 1.3c9.2 10.5 8.9 26.2-.6 36.3L12.3 453.1c-4.3 4.7-5.5 11.5-3 17.3s8.3 9.6 14.7 9.6H128c8.8 0 16-7.2 16-16s-7.2-16-16-16H60.8l60.3-64.6c20.7-22.2 21.2-56.4 1.3-79.3c-22.5-25.7-62.1-27.1-86.3-2.9L20.7 316.7c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l15.4-15.4z"></path></svg> <span>Workflow</span></a></li><li><a href="../../docs/book/8_attributes.html"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"></path></svg> <span>Attributes</span></a></li><li><a href="../../docs/book/9_schema.html"><svg height="16" width="14" viewBox="0 0 384 512"><path d="M328 24V176h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H304 248c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V57.3l-16.4 5.5C251 67 237.4 60.2 233.2 47.6S235.8 21.4 248.4 17.2l48-16C303.7-1.2 311.8 0 318 4.5S328 16.3 328 24zM104 312V464h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H80 24c-13.3 0-24-10.7-24-24s10.7-24 24-24H56V345.3l-16.4 5.5C27 355 13.4 348.2 9.2 335.6S11.8 309.4 24.4 305.2l48-16c7.3-2.4 15.4-1.2 21.6 3.3s10 11.8 10 19.5zM0 72C0 32.2 32.2 0 72 0h48c39.8 0 72 32.2 72 72v80c0 39.8-32.2 72-72 72H72c-39.8 0-72-32.2-72-72V72zM72 48C58.7 48 48 58.7 48 72v80c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H72zM264 288h48c39.8 0 72 32.2 72 72v80c0 39.8-32.2 72-72 72H264c-39.8 0-72-32.2-72-72V360c0-39.8 32.2-72 72-72zm-24 72v80c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V360c0-13.3-10.7-24-24-24H264c-13.3 0-24 10.7-24 24z"></path></svg> <span>Schema</span></a></li><li><a class="active" href="../../docs/book/10_dataflow.html"><svg height="16" width="14" viewBox="0 0 576 512"><path d="M354.5 104.3L320 135.7V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V135.7l-34.5-31.3c-13.1-11.9-33.3-10.9-45.2 2.2s-10.9 33.3 2.2 45.2l88 80c12.2 11.1 30.8 11.1 43.1 0l88-80c13.1-11.9 14-32.1 2.2-45.2s-32.1-14-45.2-2.2zm-85 189.6C247 309.4 219.5 320 192 320c-26.9 0-55.3-10.8-77.4-26.1l0 0c-11.9-8.5-28.1-7.8-39.2 1.7c-14.4 11.9-32.5 21-50.6 25.2c-17.2 4-27.9 21.2-23.9 38.4s21.2 27.9 38.4 23.9c24.5-5.7 44.9-16.5 58.2-25C126.5 373.7 159 384 192 384c31.9 0 60.6-9.9 80.4-18.9c5.8-2.7 11.1-5.3 15.6-7.7c4.5 2.4 9.7 5.1 15.6 7.7c19.8 9 48.5 18.9 80.4 18.9c33 0 65.5-10.3 94.5-25.8c13.4 8.4 33.7 19.3 58.2 25c17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2c-11.1-9.5-27.3-10.1-39.2-1.7l0 0C439.4 309.2 410.9 320 384 320c-27.5 0-55-10.6-77.5-26.1c-11.1-7.9-25.9-7.9-37 0zm37 128c-11.1-7.9-25.9-7.9-37 0C247 437.4 219.5 448 192 448c-26.9 0-55.3-10.8-77.4-26.1l0 0c-11.9-8.5-28.1-7.8-39.2 1.7c-14.4 11.9-32.5 21-50.6 25.2c-17.2 4-27.9 21.2-23.9 38.4s21.2 27.9 38.4 23.9c24.5-5.7 44.9-16.5 58.2-25C126.5 501.7 159 512 192 512c31.9 0 60.6-9.9 80.4-18.9c5.8-2.7 11.1-5.3 15.6-7.7c4.5 2.4 9.7 5.1 15.6 7.7c19.8 9 48.5 18.9 80.4 18.9c33 0 65.5-10.3 94.5-25.8c13.4 8.4 33.7 19.3 58.2 25c17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2c-11.1-9.4-27.3-10.1-39.2-1.7l0 0C439.4 437.2 410.9 448 384 448c-27.5 0-55-10.6-77.5-26.1z"></path></svg> <span>Dataflow</span></a></li><li><a href="../../docs/book/11_connectors.html"><svg height="16" width="14" viewBox="0 0 384 512"><path d="M96 0C78.3 0 64 14.3 64 32v96h64V32c0-17.7-14.3-32-32-32zM288 0c-17.7 0-32 14.3-32 32v96h64V32c0-17.7-14.3-32-32-32zM32 160c-17.7 0-32 14.3-32 32s14.3 32 32 32v32c0 77.4 55 142 128 156.8V480c0 17.7 14.3 32 32 32s32-14.3 32-32V412.8C297 398 352 333.4 352 256V224c17.7 0 32-14.3 32-32s-14.3-32-32-32H32z"></path></svg> <span>Connectors</span></a></li><li><a href="../../docs/book/12_sockets.html"><svg height="16" width="14" viewBox="0 0 576 512"><path d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64H240l-10.7 32H160c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H346.7L336 416H512c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM512 64V352H64V64H512z"></path></svg> <span>Sockets</span></a></li><li><a href="../../docs/book/13_example.html"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm64 0v64h64V96H64zm384 0H192v64H448V96zM64 224v64h64V224H64zm384 0H192v64H448V224zM64 352v64h64V352H64zm384 0H192v64H448V352z"></path></svg> <span>Example</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_providers"><svg height="16" width="12" viewBox="0 0 384 512"><path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm97 289c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L79 303c-9.4 9.4-9.4 24.6 0 33.9l48 48c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-31-31 31-31zM257 255c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l31 31-31 31c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l48-48c9.4-9.4 9.4-24.6 0-33.9l-48-48z"></path></svg> <span>Providers</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_providers" class="collapse "><li><a href="../../docs/providers/provider.html"><svg height="16" width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 86l0 88.7c-13.3 7.2-31.6 14.2-54.8 19.9C311.3 203 269.5 208 224 208s-87.3-5-121.2-13.4C79.6 188.9 61.3 182 48 174.7L48 86l.6-.5C53.9 81 64.5 74.8 81.8 68.6C115.9 56.5 166.2 48 224 48s108.1 8.5 142.2 20.6c17.3 6.2 27.8 12.4 33.2 16.9l.6 .5zm0 141.5l0 75.2c-13.3 7.2-31.6 14.2-54.8 19.9C311.3 331 269.5 336 224 336s-87.3-5-121.2-13.4C79.6 316.9 61.3 310 48 302.7l0-75.2c13.3 5.3 27.9 9.9 43.3 13.7C129.5 250.6 175.2 256 224 256s94.5-5.4 132.7-14.8c15.4-3.8 30-8.3 43.3-13.7zM48 426l0-70.4c13.3 5.3 27.9 9.9 43.3 13.7C129.5 378.6 175.2 384 224 384s94.5-5.4 132.7-14.8c15.4-3.8 30-8.3 43.3-13.7l0 70.4-.6 .5c-5.3 4.5-15.9 10.7-33.2 16.9C332.1 455.5 281.8 464 224 464s-108.1-8.5-142.2-20.6c-17.3-6.2-27.8-12.4-33.2-16.9L48 426zm354.1-2.1s0 .1-.2 .2l.1-.2c0 0 0 0 0-.1zm-356.1 0s0 .1 .2 .2c-.1-.1-.1-.2-.2-.2zm0-335.8s.1-.1 .2-.2c-.1 .1-.2 .2-.2 .2zm356-.2c.1 .1 .2 .2 .2 .2s0-.1-.2-.2zM448 432l0-352C448 35.8 347.7 0 224 0S0 35.8 0 80L0 432c0 44.2 100.3 80 224 80s224-35.8 224-80z"></path></svg> <span>Provider</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_controls"><svg height="16" width="12" viewBox="0 0 384 512"><path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm97 289c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L79 303c-9.4 9.4-9.4 24.6 0 33.9l48 48c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-31-31 31-31zM257 255c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l31 31-31 31c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l48-48c9.4-9.4 9.4-24.6 0-33.9l-48-48z"></path></svg> <span>Controls</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_controls" class="collapse "><li><a href="../../docs/controls/label.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M288 64c0 17.7-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32H256c17.7 0 32 14.3 32 32zm0 256c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H256c17.7 0 32 14.3 32 32zM0 192c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg> <span>Label</span></a></li><li><a href="../../docs/controls/table.html"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M64 256V160H224v96H64zm0 64H224v96H64V320zm224 96V320H448v96H288zM448 256H288V160H448v96zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"></path></svg> <span>Table</span></a></li><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_buttons"><svg height="16" width="14" viewBox="0 0 640 512"><path d="M192 112c-79.5 0-144 64.5-144 144s64.5 144 144 144l256 0c79.5 0 144-64.5 144-144s-64.5-144-144-144l-256 0zM0 256C0 150 86 64 192 64l256 0c106 0 192 86 192 192s-86 192-192 192l-256 0C86 448 0 362 0 256zm232-56l0 32 32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0 0 32c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-32-32 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l32 0 0-32c0-13.3 10.7-24 24-24s24 10.7 24 24zm168 72a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm32-64a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg> <span>Buttons</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_buttons" class="collapse "><li><a href="../../docs/controls/buttons/idlink.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M16 64c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H128V224c0 53 43 96 96 96s96-43 96-96V96H304c-17.7 0-32-14.3-32-32s14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H384V224c0 88.4-71.6 160-160 160s-160-71.6-160-160V96H48C30.3 96 16 81.7 16 64zM0 448c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32z"></path></svg> <span>IdLink</span></a></li><li><a href="../../docs/controls/buttons/switch.html"><svg height="16" width="14" viewBox="0 0 576 512"><path d="M160 128C89.3 128 32 185.3 32 256s57.3 128 128 128l256 0c70.7 0 128-57.3 128-128s-57.3-128-128-128l-256 0zM0 256C0 167.6 71.6 96 160 96l256 0c88.4 0 160 71.6 160 160s-71.6 160-160 160l-256 0C71.6 416 0 344.4 0 256zm480 0a64 64 0 1 0 -128 0 64 64 0 1 0 128 0zm-160 0a96 96 0 1 1 192 0 96 96 0 1 1 -192 0z"></path></svg> <span>Switch</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_formfields"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm128 0V224H448V96H128zM448 288H128V416H448V288z"></path></svg> <span>Form Fields</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_formfields" class="collapse "><li><a href="../../docs/controls/formfield/formfieldstring.html"><svg height="16" width="18" viewBox="0 0 576 512"><path d="M9.4 86.6C-3.1 74.1-3.1 53.9 9.4 41.4s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 9.4 86.6zM256 416H544c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg> <span>FormFieldString</span></a></li><li><a href="../../docs/controls/formfield/formfieldinteger.html"><svg height="16" width="18" viewBox="0 0 640 512"><path d="M576 128V384H64V128H576zM64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H576c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm40 120c0 13.3 10.7 24 24 24h8v96H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H184V184c0-13.3-10.7-24-24-24H128c-13.3 0-24 10.7-24 24zm190.6 30.4c5.7-8 17.5-8.6 24-1.2c5.2 5.9 5 14.7-.3 20.5l-72 78c-6.5 7-8.2 17.2-4.3 25.9s12.5 14.4 22 14.4h88c13.3 0 24-10.7 24-24s-10.7-24-24-24H318.8l34.8-37.7c22-23.8 22.4-60.3 1.1-84.7c-26.9-30.7-75.4-28.4-99.2 4.9l-11.1 15.6c-7.7 10.8-5.2 25.8 5.6 33.5s25.8 5.2 33.5-5.6l11.1-15.6z"></path></svg> <span>FormFieldInteger</span></a></li><li><a href="../../docs/controls/formfield/formfielddate.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"></path></svg> <span>FormFieldDate</span></a></li><li><a href="../../docs/controls/formfield/formfieldbinary.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg> <span>FormFieldBinary</span></a></li><li><a href="../../docs/controls/formfield/formfieldcheckboxes.html"><svg height="16" width="16" viewBox="0 0 512 512"><path d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg> <span>FormFieldCheckBoxes</span></a></li><li><a href="../../docs/controls/formfield/formfieldsinglechoice.html"><svg height="16" width="16" viewBox="0 0 448 512"><path d="M64 448c-17.7 0-32-14.3-32-32L32 96c0-17.7 14.3-32 32-32l320 0c17.7 0 32 14.3 32 32l0 320c0 17.7-14.3 32-32 32L64 448zM0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32C28.7 32 0 60.7 0 96L0 416zm224-64c9.6 0 18.7-4 25.2-11l95.5-102.8c4.7-5.1 7.3-11.8 7.3-18.7c0-15.2-12.3-27.5-27.5-27.5l-201 0C108.3 192 96 204.3 96 219.5c0 6.9 2.6 13.6 7.3 18.7L198.8 341c6.5 7 15.6 11 25.2 11zm-1.7-32.7L133.8 224l180.3 0-88.4 95.3c-.4 .5-1.1 .7-1.7 .7s-1.3-.3-1.7-.7z"></path></svg> <span>FormFieldSingleChoice</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_panels"><svg height="16" width="16" viewBox="0 0 448 512"><path d="M368 80l32 0 0 32-32 0 0-32zM352 32c-17.7 0-32 14.3-32 32L128 64c0-17.7-14.3-32-32-32L32 32C14.3 32 0 46.3 0 64l0 64c0 17.7 14.3 32 32 32l0 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l64 0c17.7 0 32-14.3 32-32l192 0c0 17.7 14.3 32 32 32l64 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l0-192c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l-64 0zM96 160c17.7 0 32-14.3 32-32l192 0c0 17.7 14.3 32 32 32l0 192c-17.7 0-32 14.3-32 32l-192 0c0-17.7-14.3-32-32-32l0-192zM48 400l32 0 0 32-32 0 0-32zm320 32l0-32 32 0 0 32-32 0zM48 112l0-32 32 0 0 32-32 0z"></path></svg> <span>Panels</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_panels" class="collapse "><li><a href="../../docs/controls/panel/panel.html"><svg height="16" width="16" viewBox="0 0 512 512"><path d="M464 48l0 416L48 464 48 48l416 0zM48 0L0 0 0 48 0 464l0 48 48 0 416 0 48 0 0-48 0-416 0-48L464 0 48 0z"></path></svg> <span>Panel</span></a></li><li><a href="../../docs/controls/panel/expansion_panel.html"><svg height="16" width="16" viewBox="0 0 512 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L96 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"></path></svg> <span>ExpansionPanel</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_dialogs"><svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M320 464c8.8 0 16-7.2 16-16l0-288-80 0c-17.7 0-32-14.3-32-32l0-80L64 48c-8.8 0-16 7.2-16 16l0 384c0 8.8 7.2 16 16 16l256 0zM0 64C0 28.7 28.7 0 64 0L229.5 0c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3L384 448c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64z"></path></svg> <span>Dialogs</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_dialogs" class="collapse "><li><a href="../../docs/controls/dialogs/question.html"><svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M64 48C37.5 48 16 69.5 16 96l0 320c0 26.5 21.5 48 48 48l320 0c26.5 0 48-21.5 48-48l0-320c0-26.5-21.5-48-48-48L64 48zM0 96C0 60.7 28.7 32 64 32l320 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM136 200c0-30.9 25.1-56 56-56l56.2 0c35.2 0 63.8 28.6 63.8 63.8c0 21.4-10.8 41.5-28.7 53.3L232 294.9l0 25.1c0 4.4-3.6 8-8 8s-8-3.6-8-8l0-29.5c0-2.7 1.4-5.2 3.6-6.7l54.9-36.2c13.4-8.8 21.5-23.8 21.5-39.9c0-26.4-21.4-47.8-47.8-47.8L192 160c-22.1 0-40 17.9-40 40l0 6.5c0 4.4-3.6 8-8 8s-8-3.6-8-8l0-6.5zm72 168a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z"></path></svg> <span>DialogQuestion</span></a></li><li><a href="../../docs/controls/dialogs/dialog.html"><svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M160 512l48-32 96-64 160 0 48 0 0-48 0-320 0-48L464 0 48 0 0 0 0 48 0 368l0 48 48 0 64 0 48 0 0 38.3 0 9.7 0 48zM277.4 376.1L208 422.3l0-6.3 0-48-48 0L48 368 48 48l416 0 0 320-160 0-14.5 0-12.1 8.1zM152 144l-24 0 0 48 24 0 208 0 24 0 0-48-24 0-208 0zm0 96l-24 0 0 48 24 0 112 0 24 0 0-48-24 0-112 0z"></path></svg> <span>DialogString</span></a></li></ul></li></ul></ul></li></ul></section></div>
+		</docs-main-sidebar>
+		<div class="content-wrapper">
+			<section class="content">
+				
+				<h1>Dataflow</h1>
+
+				<p>In a broad sense, the task of a component is to transform data. From the moment it is created, the component executes several methods to transform the data it receives from tag attributes and possibly from external data sources into its own data. The state object represents the current state of the component during this transformation, while the data object holds the actual data.</p>
+
+				<p>Here’s a breakdown of what happens during the initialization of a fairly universal component.</p>
+
+				<div class="card mb-3" style="padding: 14px;">
+					<table class="table">
+						<tr>
+							<th>_onConstructed</th>
+							<th>initializing</th>
+						</tr>
+						<tr>
+							<td colspan="2">A state object is created with the value 'initializing'. According to the data schema, a data object is created, with its elements initially set to null, and default values are taken from the data schema. A connector is created, and an attempt is made to connect it to the data provider.</td>
+						</tr>
+						<tr>
+							<th>_onBeforeConnected</th>
+							<th>initializing</th>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<ol class="list-group list-group-numbered list-group-flush">
+									<li class="list-group-item">If any data element has a matching attribute, the default value in the data object is replaced by the attribute value, considering the data type.</li>
+									<li class="list-group-item">The component renders its template in the DOM using a socket and collects references to its internal components.</li>
+								</ol>
+							</td>
+						</tr>
+						<tr>
+							<th>_onConnected</th>
+							<th>ready</th>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<ol class="list-group list-group-numbered list-group-flush">
+									<li class="list-group-item">The component updates its state based on its own data, the state, and data from the provider. By default, it assumes the 'ready' state.</li>
+									<li class="list-group-item">The component performs preparatory calculations on the data object using default values and provider data.</li>
+								</ol>
+							</td>
+						</tr>
+
+						<tr>
+							<th>_onAfterConnected</th>
+							<th>ready</th>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<ol class="list-group list-group-numbered list-group-flush">
+									<li class="list-group-item">If the component's state has changed, or if any data element has the _changed flag set to true, the component’s display is updated, and a koi-changed event is fired, after which the _changed flags are reset.</li>
+									<li class="list-group-item">The component subscribes to events from the provider, external components, and its internal components.</li>
+								</ol>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<p>The data transformation process outlined here has its own nuances that should be considered when developing components.</p>
+
+				<p>Note that the component attempts to update its display and trigger the koi-changed event when it is not yet fully initialized, meaning it hasn't yet subscribed to the events of the provider and other components.</p>
+
+				<p>This shouldn't cause any issues, since by the time the koi-changed event is triggered, the component has already prepared its own data, validated it, and can share it with the project and other components.</p>
+
+				<p>However, this could lead to two consecutive triggers of the koi-changed event if the provider isn't ready to provide data at the time the component is created. Let's imagine that immediately after the _onAfterConnected phase, the provider performs the necessary actions and transitions into a state where it can provide data. In this case, the component will trigger the koi-changed event a second time in response to the provider.</p>
+
+				<p>This is not necessarily incorrect behavior, but at that point, the component might "flicker," displaying the 'loading' state in the interface and then immediately switching to 'ready.'</p>
+
+				<p>Also, note that the JavaScript interpreter generally completes the execution of the method that triggers the event before the event handler in another component is called. Therefore, by the time the external handler for koi-changed is triggered, the _changed flags may have already been reset, and you won't see in the handler which specific data elements have been changed.</p>
+
+				<p>In principle, you shouldn't rely on the flag values of data elements from one component in event handlers of another component. The purpose of the data element flags is to help the component manage the process of changing its own data. They are not meant to provide information about the state of data elements to other components. The key concept here is "providing information."</p>
+
+				<p>The data object is responsible for the overall set of data. It can report that its elements have been changed, but to specify which exact elements were changed, it must expose the details of its implementation. This task is handled by modifying the event object. If you need one component to know which specific data elements of another component were changed during the event handling process, the second component must gather this information and pass it to the first component within the event object body, alongside the state and data objects being transmitted.</p>
+
+				<h4>Data Modification</h4>
+
+				<p>By default, a component does not provide public methods for modifying its data, but it can if needed.</p>
+
+				<p>If you plan to implement a component whose data can be changed through the invocation of a public method, carefully review the Workflow section again, especially event handling.</p>
+
+				<p>Let me briefly summarize the key point. The process of handling data modification should follow a standardized procedure. This is necessary so that when data is modified, the component performs a series of additional actions related to modifying the data according to the domain, updating its state based on the data, and triggering the koi-changed event. For example, the KoiLabel component, within the behavior of KoiStringDataCapable, provides a modification method that looks like this:</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_0" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_0').innerHTML = escapeHTML(`export const KoiStringDataCapable = Sup => class extends KoiDataCapable(Sup) {
+	...
+	attemptChangeValue(new_value){
+		this._log('attemptChangeValue() - ' + new_value);
+		this.data.setValue(new_value);
+		this._updateSomethingWhenChanged();
+		this._onAfterChanged();
+	}
+	...
+}`)</script>
+
+				<p>The structure of this method mirrors that of event-handling methods. First, the method that changes the data is called (in this case, data.setValue), followed by the _updateSomething* method, and then the _onAfter* method. By standardizing this sequence of calls, the component responds consistently to both direct method calls for data modification and events, executing the same sequence of actions.</p>
+
+				<p>In this standardized process, the most critical method is data.setValue, which is called first. It directly modifies the component's data by interacting with the data object.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_0_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_0_1').innerHTML = escapeHTML(`export const KoiDataValueChangeable = Sup => class extends Sup {
+	...
+	setValue(new_value){
+		this._properties['value'].setValue(new_value);
+	}
+}
+export class KoiStringData extends KoiDataValueChangeable(KoiData) {
+	...
+}
+export const KoiStringDataCapable = Sup => class extends KoiDataCapable(Sup) {
+	...
+	_constructData(){
+		return new KoiStringData();
+	}
+}`)</script>
+
+				<p>The setValue method is provided by the KoiDataValueChangeable behavior. This is a very convenient behavior for creating data objects. It encapsulates the interaction with data elements within the data object, allowing the data object to be perceived as a whole, with methods for setting and retrieving values.</p>
+
+				<p>Now let's delve deeper and examine the process of modifying a value in the KoiDataElement class:</p>
+
+				<div class="card mb-3" style="padding: 14px;">
+					<ol class="list-group list-group-numbered list-group-flush">
+						<li class="list-group-item">If the new values are the same as the current ones, no assignment takes place, the _changed flag remains false, and no further actions are performed.</li>
+						<li class="list-group-item">If the new values can be converted to the required format, the _defined flag is set.</li>
+						<li class="list-group-item">The _changed flag is set.</li>
+						<li class="list-group-item">The new value is assigned to the _value property.</li>
+						<li class="list-group-item">Completeness is checked, and additional validations are performed. If necessary, the _valid and _error_code properties are set.</li>
+					</ol>
+				</div>
+
+				<p>According to the KoiCom library's logic, the component contains the data that was assigned to it, unchanged, even if it is invalid or incomplete. This is important not only for notifying the user about invalid data but also for identifying what exactly is wrong with the data.</p>
+
+				<p>For example, when data is modified, the component attempts to cast the data type to the one specified in the data schema.</p>
+
+				<div class="card mb-3" style="padding: 14px;">
+					<docs-money-label id="money_label_1" value="0"></docs-money-label>
+				</div>
+
+				<p>If you execute the following code in the console, you will get false in the first case and true in the second. In the schema of the KoiMoneyLabel component, the value data element has the type integer. All values assigned to this element are cast to this type.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_1').innerHTML = escapeHTML(`let component_instance = document.getElementById('money_label_1');
+let str_a = '100';
+component_instance.attemptChangeValue(str_a);
+let int_b = component_instance.data._properties['value'].getRawValue();
+console.log(str_a === int_b);
+let int_c = 200;
+component_instance.attemptChangeValue(int_c);
+let int_d = component_instance.data._properties['value'].getRawValue();
+console.log(int_c === int_d);`)</script>
+
+				<p>If the data conversion fails, the value that was passed to the component is retained in the component's data without modification. If you execute the following code in the console, you will see that the component displayed an error, and the string that was provided is returned in the console.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_2" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_2').innerHTML = escapeHTML(`let component_instance = document.getElementById('money_label_1');
+component_instance.attemptChangeValue('abc');
+let int_e = component_instance.data._properties['value'].getRawValue();
+console.log(int_e);`)</script>
+
+				<p>However, this time, the error property of the data element has changed, which can be accessed by running the following code:</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_3" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_3').innerHTML = escapeHTML(`console.log(component_instance.data._properties['value'].getErrorCode());`)</script>
+
+				<p>Naturally, this code should not be called from outside the component, or even from outside the data object, as indicated by the underscore in the name of the _properties property.</p>
+
+				<h4>Additional Data Validation</h4>
+
+				<p>As seen from the previous section, the component stores any value passed to its data but includes several properties and flags to assess that value.</p>
+
+				<p>There are often cases where built-in validation is insufficient. After all, in specific applications, you are working within a particular domain, so the data object evaluates values according to that domain. In such cases, additional validation is required.</p>
+
+				<p>In these instances, the data object does not simply hold values of type string or number; instead, it contains values of other types, such as a conversion rate, a list of phone numbers, or a counterparty's email address. Additional constraints are imposed on the values of these types.</p>
+
+				<p>Let's take the KoiDataElementInteger type as an example of how to implement additional validation.</p>
+
+				<p>First, a new data type should be created, inherited from KoiDataElement.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_4_5" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_4_5').innerHTML = escapeHTML(`class KoiDataElementNumeric extends KoiDataElement {
+	...
+}
+export class KoiDataElementInteger extends KoiDataElementNumeric {
+	...
+}`)</script>
+
+				<p>Next, implement the getErrorCodeBasedOnState method in the class.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_4_6" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_4_6').innerHTML = escapeHTML(`class KoiDataElementNumeric extends KoiDataElement {
+	...
+	getErrorCodeBasedOnState(){
+		let error_code = super.getErrorCodeBasedOnState();
+		if(error_code){
+			return error_code;
+		}
+		if((this._min !== null) && (this._min > this.getRawValue())){
+			return 'validation_out_of_borders';
+		}
+		if((this._max !== null) && (this._max < this.getRawValue())){
+			return 'validation_out_of_borders';
+		}
+		return '';
+	}
+	...
+}
+export class KoiDataElementInteger extends KoiDataElementNumeric {
+	...
+	getErrorCodeBasedOnState(){
+		let error_code = super.getErrorCodeBasedOnState();
+		if(error_code){
+			return error_code;
+		}
+		let value = parseInt(this.getRawValue());
+		if(isNaN(value)){
+			return 'value_has_to_be_integer';
+		}
+		return '';
+	}
+	...
+}`)</script>
+
+				<p>Then, use this new data element class in the data schema, and that will suffice.</p>
+
+				<h4>Retrieving Data</h4>
+
+				<p>The basic components of the KoiCom library do not have public methods for retrieving data because the components themselves or connectors should be responsible for fetching the data. Both the components and connectors can access the methods of the data object.</p>
+
+				<p>This is why, in the examples found in the documentation, I often refer to protected methods and frequently use sequential calls, as demonstrated here:</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_4_7" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_4_7').innerHTML = escapeHTML(`console.log(component_instance.data._properties.value.getErrorCode());`)</script>
+
+				<p>However, this approach should not be adopted in your projects.</p>
+
+				<p>When implementing subclasses of KoiData, which represent the component's own data objects, it is necessary to retrieve data to pass to connectors of other components and to the component's own socket for rendering.</p>
+
+				<p>To retrieve data for this purpose, use the getRawValue and getValueOrDefaultValue methods of the data element. If needed, additional methods can be implemented based on the getValueAsHTML and getValueOrDefaultValueTypified methods of the data elements.</p>
+
+				<p>The getRawValue method returns the value of the _value property of the data element, that is, the value assigned to the element without regard to the default value.</p>
+
+				<p>The getValueOrDefaultValue method returns either the value of the data element or the default value when the element's value is not set.</p>
+
+				<p>In most cases, these two methods are sufficient for data transmission. However, in certain cases, methods that simplify data output to HTML or generate JSON may be necessary.</p>
+
+				<p>The getValueAsHTML method is used for outputting values into input fields and HTML tag attributes. There is a mismatch between JavaScript values and HTML tag attribute values. In JavaScript, a variable’s value can be undefined, meaning it can be null. The results of parseInt and parseFloat may result in NaN. In HTML tags, all attribute values are of type string. It is undesirable when null and NaN values are converted into the strings 'null' and 'NaN' when rendered in the interface.</p>
+
+				<p>Let's imagine that the value null was passed to the component's tag. This would result in the following tag:</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_4_8" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_4_8').innerHTML = escapeHTML(`<docs-sample-label id="sample_label_2" value="null"></docs-sample-label>`)</script>
+
+				<p>Naturally, it would appear like this:</p>
+
+				<div class="card mb-3" style="padding: 14px;">
+					<docs-sample-label id="sample_label_2" value="null"></docs-sample-label>
+				</div>
+
+				<p>Confusing data output for the user can be easily avoided by using the getValueAsHTML method instead of getValueOrDefaultValue. The getValueAsHTML method converts all values that may appear strange to the user into an empty string.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_5" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_5').innerHTML = escapeHTML(`export class DocsMoneyDataExtended extends KoiData {
+	...
+	getDataExtended(){
+		return this._properties['value'].getValueAsHTML();
+	}
+	...
+}`)</script>
+
+				<p>Additionally, you can create your own method based on getValueAsHTML to convert the data into a different format. For example, for a component that displays a monetary value, you could convert null and NaN into a red question mark or a more user-friendly word like "error".</p>
+
+				<p>The getValueOrDefaultValueTypified method is useful for transmitting component data via an API. For REST APIs, GET requests are used. The values transmitted via a GET request must be either strings or null.</p>
+
+				<p>Non-null values are converted into strings, and it would look something like this: 'https://domain.com/?var1=123&var2=&var3=abc'. Boolean values are converted into the strings 'true' and 'false'.</p>
+
+				<p>A problem arises because when receiving a request, the server might interpret the value 'false' as a string, and a non-empty string is often converted to true when converted to a boolean type.</p>
+
+				<p>The getValueOrDefaultValueTypified method converts the false value used for empty input into null, which is correctly recognized when forming a GET request.</p>
+
+				<p>Of course, you can avoid sending a request when there are mandatory fields that are not filled in, but there are various scenarios, and for special cases, the library provides the getValueOrDefaultValueTypified method.</p>
+
+				<h4>Preprocessing and Data Transformation</h4>
+
+				<p>We previously discussed data preprocessing in the Workflow section. Let's take a closer look at this topic now.</p>
+
+				<p>A component stores data in the form it is received from external sources. This is because the component must display notifications regarding the validity of the data. At the same time, the component does not always need to display and transmit the data in the exact format it received them.</p>
+
+				<p>The core function of any component is to transform the data. To transform the received data into its own data, you need to define an appropriate method in a subclass of KoiData.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_5_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_5_1').innerHTML = escapeHTML(`export class KoiFormattedPhoneLabelData extends KoiData {
+	...
+	_formatPhoneNumber(new_value){
+		...
+	}
+	...
+	setValue(new_value){
+		this._properties['value'].setValue(
+			this._formatPhoneNumber(new_value)
+		);
+	}
+	...
+}
+export const KoiFormattedPhoneLabelDataCapable = Sup => class extends KoiDataCapable(Sup) {
+	...
+	attemptChangeValue(new_value){
+		this._log('attemptChangeValue() - ' + new_value);
+		this.data.setValue(new_value);
+		this._updateSomethingWhenChanged();
+		this._onAfterChanged();
+	}
+	...
+	_constructData(){
+		return new KoiFormattedPhoneLabelData();
+	}
+	...
+}`)</script>
+
+				<p>However, this is generally not required.</p>
+
+				<p>If the component's task is to display transformed data, the data transformation should be carried out directly during the display process.</p>
+
+				<p>If the component's task is to transform the data and send the transformed value to the server via an API, the data transformation should take place just before sending.</p>
+
+			</section>
+		</div>
+		<footer class="main-footer">
+			<div class="float-end">
+				<b>Version</b> 1.13
+			</div>
+			MIT &copy; Koi 2025
+		</footer>
+	</docs-main-wrapper>
+
+<script type="module">
+	import { DocsMainWrapper } from "../../js/docs/controls/panels/docs_main_wrapper.js";
+	if (customElements.get(DocsMainWrapper.getTagName()) === undefined) {
+		customElements.define(DocsMainWrapper.getTagName(), DocsMainWrapper);
+	}
+	import { DocsMainSidebar } from "../../js/docs/controls/sidebars/docs_main_sidebar.js";
+	if (customElements.get(DocsMainSidebar.getTagName()) === undefined) {
+		customElements.define(DocsMainSidebar.getTagName(), DocsMainSidebar);
+	}
+	import { DocsIdLinkForHeader } from "../../js/docs/controls/buttons/docs_idlink_for_header.js";
+	if (customElements.get(DocsIdLinkForHeader.getTagName()) === undefined) {
+		customElements.define(DocsIdLinkForHeader.getTagName(), DocsIdLinkForHeader);
+	}
+
+	import { DocsSampleLabel } from "../../js/docs/controls/labels/docs_sample_label.js";
+	if (customElements.get(DocsSampleLabel.getTagName()) === undefined) {
+		customElements.define(DocsSampleLabel.getTagName(), DocsSampleLabel);
+	}
+	import { DocsMoneyLabel } from "../../js/docs/controls/labels/docs_money_label.js";
+	if (customElements.get(DocsMoneyLabel.getTagName()) === undefined) {
+		customElements.define(DocsMoneyLabel.getTagName(), DocsMoneyLabel);
+	}
+</script>
+
+</body>
+</html>

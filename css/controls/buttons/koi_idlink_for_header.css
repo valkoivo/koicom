@@ -1,0 +1,46 @@
+
+/*
+ * Component: Main Header Sidebar Hamburger Button.
+ * The button is on the left of the header on both screen sizes.
+ */
+
+.koi-main-header .idlink-for-header {
+	float: left;
+	display: block;
+	width: 50px;
+	height: 50px;
+}
+
+.koi-main-header .idlink-for-header a{
+	padding: 15px 15px;
+	width: 50px;
+	font-family: fontAwesome;
+	color: #ffffff;
+	text-align: center;
+	background-color: #f39c12;
+	background-image: none;
+	display: block;
+}
+
+.koi-main-header .idlink-for-header a:before {
+	content: "\f0c9";
+}
+
+.koi-main-header .idlink-for-header a:hover {
+	color: #f6f6f6;
+	background-color: #e08e0b;
+}
+
+.koi-main-header .idlink-for-header a:focus,
+.koi-main-header .idlink-for-header a:active {
+	background-color: #e08e0b;
+}
+
+@media (max-width: 767px) {
+	.koi-main-header .idlink-for-header {
+		position: absolute;
+		z-index: 1100;
+		left: 0;
+		top: 0;
+	}
+}

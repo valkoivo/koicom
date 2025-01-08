@@ -1,0 +1,139 @@
+.sidebar-contents {
+	position: sticky;
+	top: 50px;
+	height: calc(100vh - 50px);
+	display: block;
+}
+.sidebar-contents .sidebar{
+	overflow: auto;
+	height: 100%;
+	width: 100%;
+	padding-bottom: 50px;
+}
+.sidebar-contents ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.sidebar-contents ul:hover {
+	overflow: visible;
+}
+.sidebar-contents ul li {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	color: #848484;
+	background: #f9fafc;
+}
+.sidebar-contents ul li.header {
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: clip;
+	white-space: nowrap;
+}
+
+.sidebar-contents a{
+	display: block;
+	padding: 12px 5px 12px 15px;
+}
+.sidebar-contents a,
+.sidebar-contents a:hover,
+.sidebar-contents a:focus{
+	color: #444444;
+	font-weight: 600;
+	text-decoration: none;
+}
+.sidebar-contents a:hover{
+	background: #f4f4f5;
+}
+
+.sidebar-contents ul li.header a{
+	padding: 22px 30px 22px 30px;
+}
+
+
+
+.sidebar-contents ul > li .fa{
+	width: 20px;
+}
+.sidebar-contents ul ul li a{
+	display: block;
+	padding: 5px 5px 5px 25px;
+	background: #f4f4f5;
+	color: #777;
+}
+.sidebar-contents ul ul li a,
+.sidebar-contents ul ul li a:hover,
+.sidebar-contents ul ul li a:focus{
+	font-weight: 400;
+}
+
+.sidebar-contents a>.koi-angle,
+.sidebar-contents a>.pull-right-container>.koi-angle {
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin-right: 10px;
+	-webkit-transition: transform 0.5s ease;
+	-o-transition: transform 0.5s ease;
+	transition: transform 0.5s ease;
+}
+.sidebar-contents a>.koi-angle {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	margin-top: -8px;
+}
+.sidebar-contents a>.pull-right-container {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -7px;
+}
+
+.sidebar-contents a {
+	position: relative;
+}
+.sidebar-contents a > .pull-right-container {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -7px;
+}
+.sidebar-contents a > .koi-angle,
+.sidebar-contents a > .pull-right-container > .koi-angle {
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin-right: 10px;
+	-webkit-transition: transform 0.5s ease;
+	-o-transition: transform 0.5s ease;
+	transition: transform 0.5s ease;
+}
+.sidebar-contents a > .koi-angle {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	margin-top: -12px;
+}
+.sidebar-contents a[aria-expanded="true"] > .koi-angle,
+.sidebar-contents a[aria-expanded="true"] > .pull-right-container > .koi-angle {
+	-webkit-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+.sidebar-contents ul ul li a.active,
+.sidebar-contents ul ul li a.active:hover,
+.sidebar-contents ul ul li a.active:focus{
+	color: #444444;
+	font-weight: 600;
+}
+.sidebar-contents ul ul ul ul li a{
+	display: block;
+	padding: 5px 5px 5px 50px;
+	background: #f4f4f5;
+	color: #777;
+}

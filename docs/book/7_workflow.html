@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>KoiCom</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/x-icon" href="../../favicon.ico">
+
+	<!-- Bootstrap -->
+	<link href="../../libs/bootstrap/css/bootstrap.min.css" type="text/css" data-template-style="true" rel="stylesheet" />
+	<script type="text/javascript" src="../../libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Layout and NonJS Components -->
+	<link href="../../css/template/layout.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/template/typo.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/headers/koi_main_header.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/footers/koi_main_footer.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/panels/koi_main_content.css" type="text/css" rel="stylesheet" />
+
+	<!-- Web Components -->
+	<link href="../../css/controls/buttons/koi_idlink_for_header.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/sidebars/koi_main_sidebar.css" type="text/css" rel="stylesheet" />
+	<link href="../../css/controls/panels/koi_sidebar_contents.css" type="text/css" rel="stylesheet" />
+
+	<!-- escapeHTML is used to show JavaScript code in Cards -->
+	<script>
+		const escapeHTML = str => str.replace(/[&<>'"]/g, 
+			tag => ({
+			'&': '&amp;',
+			'<': '&lt;',
+			'>': '&gt;',
+			"'": '&#39;',
+			'"': '&quot;'
+		}[tag]));
+	</script>
+
+</head>
+<body>
+	<docs-main-wrapper id="koi_main_wrapper" class="wrapper">
+		<header class="koi-main-header">
+
+			<docs-idlink-for-header class="idlink-for-header" id="koi_idlink_for_header" item_action="toggle_sidebar"><span class="d-none">Show Sidebar Menu</span></docs-idlink-for-header>
+
+			<a href="../../index.html" class="logo">
+				<span class="logo-mini d-none"><img src="../../img/logo.png" class="favicon" alt="KoiCom" /></span>
+				<span class="logo-lg">KoiCom</span>
+			</a>
+			<nav class="navbar"></nav>
+		</header>
+		<docs-main-sidebar id="simple_sidebar" class="main-sidebar">
+			<div class="sidebar-contents" id="koi_sidebar_contents"><section class="sidebar"><ul class="sidebar-menu"><li class="header"><a href="../../index.html">INTRODUCTION</a></li></ul><ul class="sidebar-menu"><li><a aria-expanded="true" data-bs-toggle="collapse" href="#collapse_library"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg> <span>Library</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_library" class="collapse show"><li><a href="../../docs/book/1_overview.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"></path></svg> <span>Overview</span></a></li><li><a href="../../docs/book/2_structure.html"><svg height="16" width="18" viewBox="0 0 576 512"><path d="M208 80c0-26.5 21.5-48 48-48h64c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-8v40H464c30.9 0 56 25.1 56 56v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H464c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-4.4-3.6-8-8-8H312v40h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H256c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V280H112c-4.4 0-8 3.6-8 8v32h8c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V368c0-26.5 21.5-48 48-48h8V288c0-30.9 25.1-56 56-56H264V192h-8c-26.5 0-48-21.5-48-48V80z"></path></svg> <span>Structure</span></a></li><li><a href="../../docs/book/3_usage.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M416 0C400 0 288 32 288 176V288c0 35.3 28.7 64 64 64h32V480c0 17.7 14.3 32 32 32s32-14.3 32-32V352 240 32c0-17.7-14.3-32-32-32zM64 16C64 7.8 57.9 1 49.7 .1S34.2 4.6 32.4 12.5L2.1 148.8C.7 155.1 0 161.5 0 167.9c0 45.9 35.1 83.6 80 87.7V480c0 17.7 14.3 32 32 32s32-14.3 32-32V255.6c44.9-4.1 80-41.8 80-87.7c0-6.4-.7-12.8-2.1-19.1L191.6 12.5c-1.8-8-9.3-13.3-17.4-12.4S160 7.8 160 16V150.2c0 5.4-4.4 9.8-9.8 9.8c-5.1 0-9.3-3.9-9.8-9L127.9 14.6C127.2 6.3 120.3 0 112 0s-15.2 6.3-15.9 14.6L83.7 151c-.5 5.1-4.7 9-9.8 9c-5.4 0-9.8-4.4-9.8-9.8V16zm48.3 152l-.3 0-.3 0 .3-.7 .3 .7z"></path></svg> <span>Usage</span></a></li><li><a href="../../docs/book/4_inheritance.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M384 336H192c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16l140.1 0L400 115.9V320c0 8.8-7.2 16-16 16zM192 384H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H192c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H256c35.3 0 64-28.7 64-64V416H272v32c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192c0-8.8 7.2-16 16-16H96V128H64z"></path></svg> <span>Inheritance</span></a></li><li><a href="../../docs/book/5_composition.html"><svg height="16" width="14" viewBox="0 0 576 512"><path d="M290.8 48.6l78.4 29.7L288 109.5 206.8 78.3l78.4-29.7c1.8-.7 3.8-.7 5.7 0zM136 92.5V204.7c-1.3 .4-2.6 .8-3.9 1.3l-96 36.4C14.4 250.6 0 271.5 0 294.7V413.9c0 22.2 13.1 42.3 33.5 51.3l96 42.2c14.4 6.3 30.7 6.3 45.1 0L288 457.5l113.5 49.9c14.4 6.3 30.7 6.3 45.1 0l96-42.2c20.3-8.9 33.5-29.1 33.5-51.3V294.7c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-1.3-.5-2.6-.9-3.9-1.3V92.5c0-23.3-14.4-44.1-36.1-52.4l-96-36.4c-12.8-4.8-26.9-4.8-39.7 0l-96 36.4C150.4 48.4 136 69.3 136 92.5zM392 210.6l-82.4 31.2V152.6L392 121v89.6zM154.8 250.9l78.4 29.7L152 311.7 70.8 280.6l78.4-29.7c1.8-.7 3.8-.7 5.7 0zm18.8 204.4V354.8L256 323.2v95.9l-82.4 36.2zM421.2 250.9c1.8-.7 3.8-.7 5.7 0l78.4 29.7L424 311.7l-81.2-31.1 78.4-29.7zM523.2 421.2l-77.6 34.1V354.8L528 323.2v90.7c0 3.2-1.9 6-4.8 7.3z"></path></svg> <span>Composition</span></a></li><li><a href="../../docs/book/6_mvc.html"><svg height="16" width="14" viewBox="0 0 640 512"><path d="M0 32C0 14.3 14.3 0 32 0H48c44.2 0 80 35.8 80 80V368c0 8.8 7.2 16 16 16H608c17.7 0 32 14.3 32 32s-14.3 32-32 32H541.3c1.8 5 2.7 10.4 2.7 16c0 26.5-21.5 48-48 48s-48-21.5-48-48c0-5.6 1-11 2.7-16H253.3c1.8 5 2.7 10.4 2.7 16c0 26.5-21.5 48-48 48s-48-21.5-48-48c0-5.6 1-11 2.7-16H144c-44.2 0-80-35.8-80-80V80c0-8.8-7.2-16-16-16H32C14.3 64 0 49.7 0 32zM432 96V56c0-4.4-3.6-8-8-8H344c-4.4 0-8 3.6-8 8V96h96zM288 96V56c0-30.9 25.1-56 56-56h80c30.9 0 56 25.1 56 56V96 320H288V96zM512 320V96h16c26.5 0 48 21.5 48 48V272c0 26.5-21.5 48-48 48H512zM240 96h16V320H240c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48z"></path></svg> <span>MVC</span></a></li><li><a class="active" href="../../docs/book/7_workflow.html"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M32 48c0 8.8 7.2 16 16 16H64V192H32c-8.8 0-16 7.2-16 16s7.2 16 16 16h96c8.8 0 16-7.2 16-16s-7.2-16-16-16H96V48c0-8.8-7.2-16-16-16H48c-8.8 0-16 7.2-16 16zM192 96c0 8.8 7.2 16 16 16H496c8.8 0 16-7.2 16-16s-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm0 160c0 8.8 7.2 16 16 16H496c8.8 0 16-7.2 16-16s-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm0 160c0 8.8 7.2 16 16 16H496c8.8 0 16-7.2 16-16s-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zM58.7 323.9c11.1-11.1 29.2-10.5 39.6 1.3c9.2 10.5 8.9 26.2-.6 36.3L12.3 453.1c-4.3 4.7-5.5 11.5-3 17.3s8.3 9.6 14.7 9.6H128c8.8 0 16-7.2 16-16s-7.2-16-16-16H60.8l60.3-64.6c20.7-22.2 21.2-56.4 1.3-79.3c-22.5-25.7-62.1-27.1-86.3-2.9L20.7 316.7c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0l15.4-15.4z"></path></svg> <span>Workflow</span></a></li><li><a href="../../docs/book/8_attributes.html"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"></path></svg> <span>Attributes</span></a></li><li><a href="../../docs/book/9_schema.html"><svg height="16" width="14" viewBox="0 0 384 512"><path d="M328 24V176h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H304 248c-13.3 0-24-10.7-24-24s10.7-24 24-24h32V57.3l-16.4 5.5C251 67 237.4 60.2 233.2 47.6S235.8 21.4 248.4 17.2l48-16C303.7-1.2 311.8 0 318 4.5S328 16.3 328 24zM104 312V464h32c13.3 0 24 10.7 24 24s-10.7 24-24 24H80 24c-13.3 0-24-10.7-24-24s10.7-24 24-24H56V345.3l-16.4 5.5C27 355 13.4 348.2 9.2 335.6S11.8 309.4 24.4 305.2l48-16c7.3-2.4 15.4-1.2 21.6 3.3s10 11.8 10 19.5zM0 72C0 32.2 32.2 0 72 0h48c39.8 0 72 32.2 72 72v80c0 39.8-32.2 72-72 72H72c-39.8 0-72-32.2-72-72V72zM72 48C58.7 48 48 58.7 48 72v80c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H72zM264 288h48c39.8 0 72 32.2 72 72v80c0 39.8-32.2 72-72 72H264c-39.8 0-72-32.2-72-72V360c0-39.8 32.2-72 72-72zm-24 72v80c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V360c0-13.3-10.7-24-24-24H264c-13.3 0-24 10.7-24 24z"></path></svg> <span>Schema</span></a></li><li><a href="../../docs/book/10_dataflow.html"><svg height="16" width="14" viewBox="0 0 576 512"><path d="M354.5 104.3L320 135.7V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V135.7l-34.5-31.3c-13.1-11.9-33.3-10.9-45.2 2.2s-10.9 33.3 2.2 45.2l88 80c12.2 11.1 30.8 11.1 43.1 0l88-80c13.1-11.9 14-32.1 2.2-45.2s-32.1-14-45.2-2.2zm-85 189.6C247 309.4 219.5 320 192 320c-26.9 0-55.3-10.8-77.4-26.1l0 0c-11.9-8.5-28.1-7.8-39.2 1.7c-14.4 11.9-32.5 21-50.6 25.2c-17.2 4-27.9 21.2-23.9 38.4s21.2 27.9 38.4 23.9c24.5-5.7 44.9-16.5 58.2-25C126.5 373.7 159 384 192 384c31.9 0 60.6-9.9 80.4-18.9c5.8-2.7 11.1-5.3 15.6-7.7c4.5 2.4 9.7 5.1 15.6 7.7c19.8 9 48.5 18.9 80.4 18.9c33 0 65.5-10.3 94.5-25.8c13.4 8.4 33.7 19.3 58.2 25c17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2c-11.1-9.5-27.3-10.1-39.2-1.7l0 0C439.4 309.2 410.9 320 384 320c-27.5 0-55-10.6-77.5-26.1c-11.1-7.9-25.9-7.9-37 0zm37 128c-11.1-7.9-25.9-7.9-37 0C247 437.4 219.5 448 192 448c-26.9 0-55.3-10.8-77.4-26.1l0 0c-11.9-8.5-28.1-7.8-39.2 1.7c-14.4 11.9-32.5 21-50.6 25.2c-17.2 4-27.9 21.2-23.9 38.4s21.2 27.9 38.4 23.9c24.5-5.7 44.9-16.5 58.2-25C126.5 501.7 159 512 192 512c31.9 0 60.6-9.9 80.4-18.9c5.8-2.7 11.1-5.3 15.6-7.7c4.5 2.4 9.7 5.1 15.6 7.7c19.8 9 48.5 18.9 80.4 18.9c33 0 65.5-10.3 94.5-25.8c13.4 8.4 33.7 19.3 58.2 25c17.2 4 34.4-6.7 38.4-23.9s-6.7-34.4-23.9-38.4c-18.1-4.2-36.2-13.3-50.6-25.2c-11.1-9.4-27.3-10.1-39.2-1.7l0 0C439.4 437.2 410.9 448 384 448c-27.5 0-55-10.6-77.5-26.1z"></path></svg> <span>Dataflow</span></a></li><li><a href="../../docs/book/11_connectors.html"><svg height="16" width="14" viewBox="0 0 384 512"><path d="M96 0C78.3 0 64 14.3 64 32v96h64V32c0-17.7-14.3-32-32-32zM288 0c-17.7 0-32 14.3-32 32v96h64V32c0-17.7-14.3-32-32-32zM32 160c-17.7 0-32 14.3-32 32s14.3 32 32 32v32c0 77.4 55 142 128 156.8V480c0 17.7 14.3 32 32 32s32-14.3 32-32V412.8C297 398 352 333.4 352 256V224c17.7 0 32-14.3 32-32s-14.3-32-32-32H32z"></path></svg> <span>Connectors</span></a></li><li><a href="../../docs/book/12_sockets.html"><svg height="16" width="14" viewBox="0 0 576 512"><path d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64H240l-10.7 32H160c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H346.7L336 416H512c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM512 64V352H64V64H512z"></path></svg> <span>Sockets</span></a></li><li><a href="../../docs/book/13_example.html"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm64 0v64h64V96H64zm384 0H192v64H448V96zM64 224v64h64V224H64zm384 0H192v64H448V224zM64 352v64h64V352H64zm384 0H192v64H448V352z"></path></svg> <span>Example</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_providers"><svg height="16" width="12" viewBox="0 0 384 512"><path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm97 289c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L79 303c-9.4 9.4-9.4 24.6 0 33.9l48 48c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-31-31 31-31zM257 255c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l31 31-31 31c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l48-48c9.4-9.4 9.4-24.6 0-33.9l-48-48z"></path></svg> <span>Providers</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_providers" class="collapse "><li><a href="../../docs/providers/provider.html"><svg height="16" width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M400 86l0 88.7c-13.3 7.2-31.6 14.2-54.8 19.9C311.3 203 269.5 208 224 208s-87.3-5-121.2-13.4C79.6 188.9 61.3 182 48 174.7L48 86l.6-.5C53.9 81 64.5 74.8 81.8 68.6C115.9 56.5 166.2 48 224 48s108.1 8.5 142.2 20.6c17.3 6.2 27.8 12.4 33.2 16.9l.6 .5zm0 141.5l0 75.2c-13.3 7.2-31.6 14.2-54.8 19.9C311.3 331 269.5 336 224 336s-87.3-5-121.2-13.4C79.6 316.9 61.3 310 48 302.7l0-75.2c13.3 5.3 27.9 9.9 43.3 13.7C129.5 250.6 175.2 256 224 256s94.5-5.4 132.7-14.8c15.4-3.8 30-8.3 43.3-13.7zM48 426l0-70.4c13.3 5.3 27.9 9.9 43.3 13.7C129.5 378.6 175.2 384 224 384s94.5-5.4 132.7-14.8c15.4-3.8 30-8.3 43.3-13.7l0 70.4-.6 .5c-5.3 4.5-15.9 10.7-33.2 16.9C332.1 455.5 281.8 464 224 464s-108.1-8.5-142.2-20.6c-17.3-6.2-27.8-12.4-33.2-16.9L48 426zm354.1-2.1s0 .1-.2 .2l.1-.2c0 0 0 0 0-.1zm-356.1 0s0 .1 .2 .2c-.1-.1-.1-.2-.2-.2zm0-335.8s.1-.1 .2-.2c-.1 .1-.2 .2-.2 .2zm356-.2c.1 .1 .2 .2 .2 .2s0-.1-.2-.2zM448 432l0-352C448 35.8 347.7 0 224 0S0 35.8 0 80L0 432c0 44.2 100.3 80 224 80s224-35.8 224-80z"></path></svg> <span>Provider</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_controls"><svg height="16" width="12" viewBox="0 0 384 512"><path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm97 289c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L79 303c-9.4 9.4-9.4 24.6 0 33.9l48 48c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-31-31 31-31zM257 255c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l31 31-31 31c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l48-48c9.4-9.4 9.4-24.6 0-33.9l-48-48z"></path></svg> <span>Controls</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_controls" class="collapse "><li><a href="../../docs/controls/label.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M288 64c0 17.7-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32H256c17.7 0 32 14.3 32 32zm0 256c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H256c17.7 0 32 14.3 32 32zM0 192c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg> <span>Label</span></a></li><li><a href="../../docs/controls/table.html"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M64 256V160H224v96H64zm0 64H224v96H64V320zm224 96V320H448v96H288zM448 256H288V160H448v96zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"></path></svg> <span>Table</span></a></li><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_buttons"><svg height="16" width="14" viewBox="0 0 640 512"><path d="M192 112c-79.5 0-144 64.5-144 144s64.5 144 144 144l256 0c79.5 0 144-64.5 144-144s-64.5-144-144-144l-256 0zM0 256C0 150 86 64 192 64l256 0c106 0 192 86 192 192s-86 192-192 192l-256 0C86 448 0 362 0 256zm232-56l0 32 32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0 0 32c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-32-32 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l32 0 0-32c0-13.3 10.7-24 24-24s24 10.7 24 24zm168 72a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm32-64a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg> <span>Buttons</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_buttons" class="collapse "><li><a href="../../docs/controls/buttons/idlink.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M16 64c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H128V224c0 53 43 96 96 96s96-43 96-96V96H304c-17.7 0-32-14.3-32-32s14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H384V224c0 88.4-71.6 160-160 160s-160-71.6-160-160V96H48C30.3 96 16 81.7 16 64zM0 448c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32z"></path></svg> <span>IdLink</span></a></li><li><a href="../../docs/controls/buttons/switch.html"><svg height="16" width="14" viewBox="0 0 576 512"><path d="M160 128C89.3 128 32 185.3 32 256s57.3 128 128 128l256 0c70.7 0 128-57.3 128-128s-57.3-128-128-128l-256 0zM0 256C0 167.6 71.6 96 160 96l256 0c88.4 0 160 71.6 160 160s-71.6 160-160 160l-256 0C71.6 416 0 344.4 0 256zm480 0a64 64 0 1 0 -128 0 64 64 0 1 0 128 0zm-160 0a96 96 0 1 1 192 0 96 96 0 1 1 -192 0z"></path></svg> <span>Switch</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_formfields"><svg height="16" width="14" viewBox="0 0 512 512"><path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm128 0V224H448V96H128zM448 288H128V416H448V288z"></path></svg> <span>Form Fields</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_formfields" class="collapse "><li><a href="../../docs/controls/formfield/formfieldstring.html"><svg height="16" width="18" viewBox="0 0 576 512"><path d="M9.4 86.6C-3.1 74.1-3.1 53.9 9.4 41.4s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 9.4 86.6zM256 416H544c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg> <span>FormFieldString</span></a></li><li><a href="../../docs/controls/formfield/formfieldinteger.html"><svg height="16" width="18" viewBox="0 0 640 512"><path d="M576 128V384H64V128H576zM64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H576c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm40 120c0 13.3 10.7 24 24 24h8v96H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H184V184c0-13.3-10.7-24-24-24H128c-13.3 0-24 10.7-24 24zm190.6 30.4c5.7-8 17.5-8.6 24-1.2c5.2 5.9 5 14.7-.3 20.5l-72 78c-6.5 7-8.2 17.2-4.3 25.9s12.5 14.4 22 14.4h88c13.3 0 24-10.7 24-24s-10.7-24-24-24H318.8l34.8-37.7c22-23.8 22.4-60.3 1.1-84.7c-26.9-30.7-75.4-28.4-99.2 4.9l-11.1 15.6c-7.7 10.8-5.2 25.8 5.6 33.5s25.8 5.2 33.5-5.6l11.1-15.6z"></path></svg> <span>FormFieldInteger</span></a></li><li><a href="../../docs/controls/formfield/formfielddate.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"></path></svg> <span>FormFieldDate</span></a></li><li><a href="../../docs/controls/formfield/formfieldbinary.html"><svg height="16" width="14" viewBox="0 0 448 512"><path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"></path></svg> <span>FormFieldBinary</span></a></li><li><a href="../../docs/controls/formfield/formfieldcheckboxes.html"><svg height="16" width="16" viewBox="0 0 512 512"><path d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg> <span>FormFieldCheckBoxes</span></a></li><li><a href="../../docs/controls/formfield/formfieldsinglechoice.html"><svg height="16" width="16" viewBox="0 0 448 512"><path d="M64 448c-17.7 0-32-14.3-32-32L32 96c0-17.7 14.3-32 32-32l320 0c17.7 0 32 14.3 32 32l0 320c0 17.7-14.3 32-32 32L64 448zM0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32C28.7 32 0 60.7 0 96L0 416zm224-64c9.6 0 18.7-4 25.2-11l95.5-102.8c4.7-5.1 7.3-11.8 7.3-18.7c0-15.2-12.3-27.5-27.5-27.5l-201 0C108.3 192 96 204.3 96 219.5c0 6.9 2.6 13.6 7.3 18.7L198.8 341c6.5 7 15.6 11 25.2 11zm-1.7-32.7L133.8 224l180.3 0-88.4 95.3c-.4 .5-1.1 .7-1.7 .7s-1.3-.3-1.7-.7z"></path></svg> <span>FormFieldSingleChoice</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_panels"><svg height="16" width="16" viewBox="0 0 448 512"><path d="M368 80l32 0 0 32-32 0 0-32zM352 32c-17.7 0-32 14.3-32 32L128 64c0-17.7-14.3-32-32-32L32 32C14.3 32 0 46.3 0 64l0 64c0 17.7 14.3 32 32 32l0 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l64 0c17.7 0 32-14.3 32-32l192 0c0 17.7 14.3 32 32 32l64 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l0-192c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l-64 0zM96 160c17.7 0 32-14.3 32-32l192 0c0 17.7 14.3 32 32 32l0 192c-17.7 0-32 14.3-32 32l-192 0c0-17.7-14.3-32-32-32l0-192zM48 400l32 0 0 32-32 0 0-32zm320 32l0-32 32 0 0 32-32 0zM48 112l0-32 32 0 0 32-32 0z"></path></svg> <span>Panels</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_panels" class="collapse "><li><a href="../../docs/controls/panel/panel.html"><svg height="16" width="16" viewBox="0 0 512 512"><path d="M464 48l0 416L48 464 48 48l416 0zM48 0L0 0 0 48 0 464l0 48 48 0 416 0 48 0 0-48 0-416 0-48L464 0 48 0z"></path></svg> <span>Panel</span></a></li><li><a href="../../docs/controls/panel/expansion_panel.html"><svg height="16" width="16" viewBox="0 0 512 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L96 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"></path></svg> <span>ExpansionPanel</span></a></li></ul></li></ul><ul class="sidebar-menu"><li><a data-bs-toggle="collapse" href="#collapse_dialogs"><svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M320 464c8.8 0 16-7.2 16-16l0-288-80 0c-17.7 0-32-14.3-32-32l0-80L64 48c-8.8 0-16 7.2-16 16l0 384c0 8.8 7.2 16 16 16l256 0zM0 64C0 28.7 28.7 0 64 0L229.5 0c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3L384 448c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64z"></path></svg> <span>Dialogs</span><span class="koi-angle pull-right-container"><svg height="16" width="10" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></span></a><ul id="collapse_dialogs" class="collapse "><li><a href="../../docs/controls/dialogs/question.html"><svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M64 48C37.5 48 16 69.5 16 96l0 320c0 26.5 21.5 48 48 48l320 0c26.5 0 48-21.5 48-48l0-320c0-26.5-21.5-48-48-48L64 48zM0 96C0 60.7 28.7 32 64 32l320 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM136 200c0-30.9 25.1-56 56-56l56.2 0c35.2 0 63.8 28.6 63.8 63.8c0 21.4-10.8 41.5-28.7 53.3L232 294.9l0 25.1c0 4.4-3.6 8-8 8s-8-3.6-8-8l0-29.5c0-2.7 1.4-5.2 3.6-6.7l54.9-36.2c13.4-8.8 21.5-23.8 21.5-39.9c0-26.4-21.4-47.8-47.8-47.8L192 160c-22.1 0-40 17.9-40 40l0 6.5c0 4.4-3.6 8-8 8s-8-3.6-8-8l0-6.5zm72 168a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z"></path></svg> <span>DialogQuestion</span></a></li><li><a href="../../docs/controls/dialogs/dialog.html"><svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M160 512l48-32 96-64 160 0 48 0 0-48 0-320 0-48L464 0 48 0 0 0 0 48 0 368l0 48 48 0 64 0 48 0 0 38.3 0 9.7 0 48zM277.4 376.1L208 422.3l0-6.3 0-48-48 0L48 368 48 48l416 0 0 320-160 0-14.5 0-12.1 8.1zM152 144l-24 0 0 48 24 0 208 0 24 0 0-48-24 0-208 0zm0 96l-24 0 0 48 24 0 112 0 24 0 0-48-24 0-112 0z"></path></svg> <span>DialogString</span></a></li></ul></li></ul></ul></li></ul></section></div>
+		</docs-main-sidebar>
+		<div class="content-wrapper">
+			<section class="content">
+				
+				<h1>Workflow</h1>
+
+				<p>The web components specification provides only a small part of the process for creating and using components, including methods like constructor, connectedCallback, disconnectedCallback, and a few others. The rest of the work falls on the shoulders of developers. Unfortunately, this "rest" is vast, and the creators of web components have defined nothing beyond this small portion. Without a guiding framework, developers may not always know how components should behave.</p>
+
+				<p>The KoiCom library offers a behavioral pattern similar to that of VCL components. This behavior is based on the constructor, the order of rendering, and events.</p>
+
+				<h4>Constructor</h4>
+
+				<p>The component's constructor is the constructor of the component's class. During the execution of the constructor code, the component may not yet be present in the DOM document. In other words, no external renderings are available to the component. As a result, some developers might think that the constructor is useless, while others might feel the urge to include as much code as possible in the constructor.</p>
+
+				<p>However, as we've seen in the sections on Inheritance and Composition, the component's constructor is closely tied to how the component defines its methods. Methods inherited or added via mixins are accessible within the constructor. Methods added through the "has-a" composition pattern are only available after the corresponding object is created. Therefore, the constructor is the best place to instantiate data objects and display objects.</p>
+
+				<p>In the KoiCom library, the constructor has a special significance. It is the method where the component's workflow begins, divided into stages, with each stage requiring the component to perform a specific set of actions. To emphasize that a certain set of methods is invoked during the constructor's execution, KoiCom uses the method _onConstructed rather than the constructor method.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_0" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_0').innerHTML = escapeHTML(`class KoiElementStencil extends HTMLElement {
+	...
+	_onConstructed(){
+
+	}
+
+	constructor() {
+		super();
+		this._onConstructed();
+	}
+	...
+}`)</script>
+
+				<p>If the component implements a "has-a" composition, the _onConstructed method must be overridden in the component. The overridden method should start by calling _onConstructed from the superclass to ensure that the component implements not only its own compositions but also all compositions from its ancestors.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_1').innerHTML = escapeHTML(`export const KoiDataCapable = Sup => class extends Sup {
+	...
+	_onConstructed() {
+		super._onConstructed();
+		this.data = this._constructData();
+	}
+	...
+}`)</script>
+
+				<p>The result of composition is usually the creation of a component attribute. In the example above, the attribute this.data is created.</p>
+
+				<p>In the KoiCom library, there are many pre-created behaviors. These behaviors create attributes, some of which include the following:</p>
+
+				<table class="table">
+					<tr>
+						<th>id</th>
+						<td>The component's identifier.</td>
+					</tr>
+					<tr>
+						<th>_state</th>
+						<td>The component's state object. It can have the following values: 'initializing', 'loading', 'badconnection', 'forbidden', 'ready', 'error'. It determines the availability of the component's methods and data for use.</td>
+					</tr>
+					<tr>
+						<th>data</th>
+						<td>The component's own data object.</td>
+					</tr>
+					<tr>
+						<th>_debug_mode</th>
+						<td>The component's debug mode flag. In debug mode, the component logs method names to the console in the order they are called.</td>
+					</tr>
+					<tr>
+						<th>_changed_event_details</th>
+						<td>The data sent in the event.</td>
+					</tr>
+					<tr>
+						<th>_changed_event</th>
+						<td>The event object triggered by the component.</td>
+					</tr>
+					<tr>
+						<th>socket</th>
+						<td>The display object. It stores the identifiers and references to internal components. It manages the component's appearance.</td>
+					</tr>
+					<tr>
+						<th>_connector</th>
+						<td>The connector object for external components. It allows retrieving data from external components.</td>
+					</tr>
+				</table>
+
+				<p>Since your tasks may require additional behaviors, you will create custom attributes for components. To initialize these attributes with certain initial values, you may need to retrieve these values from somewhere.</p>
+
+				<p>Although the component has not yet been inserted into the DOM during the constructor's execution, the component's tag attributes are already accessible within the constructor. That is, you can call getAttribute, which will return the value of the tag attribute. This allows you to gather attribute values for the component's attributes from the tag attributes. This will be explained in more detail in the "Attributes" section, but for now, here is an example.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_2" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_2').innerHTML = escapeHTML(`const KoiChangedEventMuteable = Sup => class extends Sup {
+	...
+	_prepareMutedFromAttributes(){
+		this._muted = this.hasAttribute('muted');
+	}
+
+	_onConstructed(){
+		super._onConstructed();
+		this._prepareMutedFromAttributes();
+	}
+	...
+}`)</script>
+
+				<p>In this example, the behavior KoiChangedEventMuteable defines the component's _muted attribute and sets its initial value from the muted tag attribute in the component's constructor, i.e., in the _onConstructed method. This approach is used throughout the KoiCom library.</p>
+
+				<p>The only exception is the process in which default values for the component's own data are gathered from the tag attributes. This process is moved out of the constructor into connectedCallback, which will be discussed below.</p>
+
+				<h4>connectedCallback</h4>
+
+				<p>If you connect a component as described in the Usage section, the connectedCallback is called after the constructor. This is where the interesting part begins, as the component is now embedded in the DOM and can be rendered.</p>
+
+				<p>In the Web Components specification, connectedCallback is not divided into stages, which leads many developers to write large blocks of code within this method without considering breaking it into smaller sections and organizing it.</p>
+
+				<p>In the KoiCom library, the process is divided into three stages: _onBeforeConnected, _onConnected, and _onAfterConnected.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_3" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_3').innerHTML = escapeHTML(`class KoiElementStencil extends HTMLElement {
+	...
+	connectedCallback() {
+		this._onBeforeConnected();
+		this._onConnected();
+		this._onAfterConnected();
+	}
+	...
+}`)</script>
+
+				<p>The purpose of dividing it into stages is solely to separate and organize the initialization process of the connected component.</p>
+
+				<ol class="list-group list-group-numbered mb-3">
+					<li class="list-group-item">In the _onBeforeConnected stage, the component prepares itself for operation.<br /><br />The component retrieves default values for its own data, prepares its data for further use, and creates the event object.<br /><br />Finally, the component creates the display object, which is used to render the template in the DOM and collect references to internal components.</li>
+					<li class="list-group-item">In the _onConnected stage, the component sets its state based on its own data and can provide values for any part of its data that were not set in the previous stage.</li>
+					<li class="list-group-item">In the _onAfterConnected stage, the component attempts to display data in its template that is not expected to change during the component's lifecycle and updates its display based on data that can change.<br /><br />If something prevents the component from being displayed at this stage, it will show an error message. For example, if the component's data is not filled out, and the component is expecting user input, it may notify the user about it.<br /><br />Next, the component triggers its own events, signaling that the connectedCallback process is complete.<br /><br />Finally, the component subscribes to events from its internal components and the connector.</li>
+				</ol>
+
+				<p>As you can see, each stage has its specific purpose, and they should occur sequentially.</p>
+
+				<h4>disconnectedCallback</h4>
+
+				<p>To complete the lifecycle, the component should unsubscribe from all event subscriptions. To achieve this, the _onDisconnected method is called within the disconnectedCallback. By overriding this method, you can unsubscribe from the subscriptions that were added in _onAfterConnected.</p>
+
+				<p>Furthermore, if necessary, the disconnectedCallback should also release memory from objects created elsewhere in the component's code.</p>
+
+				<h4>Events</h4>
+
+				<p>Events play a vital role in the interaction processes between components. Interestingly, the concept of events has changed with the development of user interfaces and software. In the VCL documentation, it is already stated that events allow the developer to customize the component's behavior. Previously, in the Turbo Vision documentation, an event was defined as an occurrence that the application should respond to. The meaning of an event itself has evolved.</p>
+
+				<p>In Turbo Vision (TV), an event was something external to the component, whereas in VCL, there are both external and internal events. By writing the code for methods triggered by an event, the developer defines the behavior of the component, rather than just its reaction. In the KoiCom library, events are understood in this way. All actions carried out by methods with the on prefix, attempt, and even the constructor are, in essence, events. By overriding methods in subclasses of base components, the developer defines the component's behavior.</p>
+
+				<p>However, there are significant differences between events. When a component is inserted onto a page, the handling of the constructor and connectedCallback occurs sequentially, and after that, the component does not call methods that were invoked at these stages. In other words, there are events with a deterministic order. The response to these events is also predefined, and there is no need for additional objects to trigger one method in response to such an event. It suffices to call the response method within the event method itself. Typically, the terms "response" and "event" are not used when one method calls another.</p>
+
+				<p>However, in addition to such events, there are events whose trigger time is not predefined, and therefore, the response to them can happen multiple times at different moments. For example, the moment when a user presses a button is not predefined by the code. The program does not pause, waiting for the button to be pressed. To enable the program to react to the button press, additional objects and concepts are introduced. We say that a component subscribes to an event, that the component intercepts and handles the event. We introduce a special event object, a subscription method, and a handler method. Events of this type differ from events with a deterministic trigger order. Here and below, we will most often refer to such events.</p>
+
+				<p>These events are also distinguished by the complexity of their handling. At the moment of event interception, the component may be in various states and have different values for its own data. This creates the need to take into account the variability of the component’s state and data when handling events.</p>
+
+				<p>Can events be classified? Yes, events are typically classified. Events are assigned specific event codes. For example, most people are familiar with the click and change codes. However, this classification is somewhat meaningless. After all, what difference does it make to the component what exactly happened? What is more important for the component is what it needs to do. This leads us to the identification of a category of events, which can be conditionally referred to as commands. A component, API, or user issues a command that another component should perform.</p>
+
+				<p>Is it important who issues the command? If the handler of the command is a method that saves a document to a file, it doesn't matter whether the command to save the document was issued by a button, a menu item, or a component handling keyboard shortcuts. It turns out that the source of the command is not important.</p>
+
+				<p>But how should events be classified then? Let's recall that a component is a combination of behaviors. Each behavior defines its own set of reactions. The behavior that links the component to its own data defines the need to react to changes in the component's data. The behavior that links the component to the connector defines the need to react to changes in the connector's state. The behavior linking the component to an internal button defines the need to react to a button press. Since the method names within behaviors should not overlap to avoid overriding each other's methods, events in behaviors should be described by methods with different names.</p>
+
+				<p>Of course, this is not the strongest argument for separating events from one another, and I could have created the library without distinguishing between events, using a single universal type of event. However, I found that when events are described with distinct method names, which are additionally tied to behaviors, the resulting code is easier to understand.</p>
+
+				<p>Therefore, I have distinguished several types of events based on the behaviors. So, let's start with events that handle data changes.</p>
+
+				<h4>Data Change Events</h4>
+
+				<p>A component's own data can be changed for various reasons. Let's temporarily ignore the reasons for the change and who initiated it. Instead, let's focus on the subsequent events.</p>
+
+				<p>The KoiDataCapable behavior provides the method _updateSomethingWhenChanged, which is not tied to a specific event handler but can be invoked in combination with the _onAfterChanged method when the component’s own data is altered.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_4_1" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_4_1').innerHTML = escapeHTML(`export const KoiStringDataCapable = Sup => class extends KoiDataCapable(Sup) {
+
+	attemptChangeValue(new_value){
+		this._log('attemptChangeValue() - ' + new_value);
+		this.data.setValue(new_value);
+		this._updateSomethingWhenChanged();
+		this._onAfterChanged();
+	}
+	...
+}`)</script>
+
+				<p>In the example given here, a method called attemptChangeValue is created, which can be used to modify the component's own data. This method first changes the data and then calls the _updateSomethingWhenChanged and _onAfterChanged methods.</p>
+
+				<p>The _updateSomethingWhenChanged and _onAfterChanged methods together, in this order, represent a response to the event of data modification. The first method updates the component's state based on the new values of the component's data, and the second, if the data has changed, calls the _handleSomethingChanged method.</p>
+
+				<p>What happens inside the _handleSomethingChanged method depends on the functionality of the component. If the component has a socket, it can update its display. If the component is a data provider, it can signal that its data has been modified.</p>
+
+				<p>What I just described is the process of handling the event of a component’s own data changing. Although the event has a deterministic nature, as we discussed earlier, it is accompanied by a processing procedure. This process follows a strict structure: first, the component’s state is modified, then the component updates its display and triggers its own events.</p>
+
+				<p>The process of handling an event for changing external data follows exactly the same structure. By "external data," we refer to the data of the provider.</p>
+
+				<p>Let’s assume a component acts as a data provider, and another component is the receiver of this data. For the second component to receive the data, the provider must signal the change. A few paragraphs earlier, we mentioned that the provider can signal a change in its own data using the _handleSomethingChanged method.</p>
+
+				<p>The KoiChangedEventDispatchable behavior enables the provider to do this.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_4_2" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_4_2').innerHTML = escapeHTML(`export const KoiChangedEventDispatchable = Sup => class extends Sup {
+	...
+	_dispatchChangedEvent(){
+		...
+		this.dispatchEvent(this._changed_event);
+	}
+	_dispatchChangedEventWhenChanged(){
+		this._dispatchChangedEvent();
+	}
+	_handleSomethingChanged(){
+		super._handleSomethingChanged();
+		this._dispatchChangedEventWhenChanged();
+	}
+	...
+}`)</script>
+
+				<p>Here, we see that the KoiChangedEventDispatchable behavior calls the _dispatchChangedEventWhenChanged method, which triggers an event through which the provider signals that its own data has changed.</p>
+
+				<p>The dispatchEvent method is a standard method that triggers an event created in the component as an object of the CustomEvent class.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_6" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_6').innerHTML = escapeHTML(`export const KoiChangedEventDispatchable = Sup => class extends Sup {
+	...
+	_constructChangedEvent(){
+		return new CustomEvent('koi-changed', {
+			bubbles: false,
+			composed: false,
+			detail: this._changed_event_details
+		});
+	}
+	...
+}`)</script>
+
+				<p>This object is created with the code koi-changed, and from now on, I will frequently refer to the event object using this code. For example, I will refer to it as the koi-changed event.</p>
+
+				<p>By subscribing to the koi-changed event, an external component can find out that the component's data has changed and react to this change.</p>
+
+				<p>The usual purpose of the koi-changed event is to provide the data to the external component. In this sense, the component that triggered the koi-changed event acts as the data provider, and the component receiving the data should have a connector connected to the provider.</p>
+
+				<p>For a component to react to the koi-changed event from the provider, it must implement the KoiConnectorInteractable behavior, which determines the order of event processing.</p>
+
+				<div class="card mb-3" style="padding: 14px;"><blockquote class="blockquote"><pre><code id="some_code_7" style="white-space: break-spaces;"></code></pre></blockquote></div>
+				<script>document.getElementById('some_code_7').innerHTML = escapeHTML(`export const KoiConnectorInteractable = Sup => class extends KoiConnectorInitializable(Sup) {
+	...
+	_updateSomethingWhenConnectorDataChanged(event_detail){
+		this._updateOwnDataWhenConnectorDataChanged(event_detail);
+		this._updateStateCodeWhenConnectorDataChanged(event_detail);
+	}
+	_attemptApplyConnectorDataChanged(event){
+		this._log('attemptApplyConnectorDataChanged()');
+		this._updateSomethingWhenConnectorDataChanged(event.detail);
+		this._onAfterConnectorDataChanged(event.detail);
+	}
+	...
+}`)</script>
+
+				<p>Here, we again encounter familiar constructs like _updateSomethingWhen* and _onAfter*DataChanged. The event handling process described above is universal, with only the method names changing.</p>
+
+				<p>To summarize, we have a behavior that triggers changes to a component's own data. This behavior dictates the order in which the component responds to changes in its own data. If the component is a data provider, it uses the corresponding behavior, which enables it to trigger its own event after changing its data. Another component can intercept this event and respond to it. The event handling processes follow the same step-by-step structure.</p>
+
+				<p>Later, we will see that this pattern is used in the KoiCom library for handling all types of events, allowing us to quickly apply the necessary two behaviors to selected classes and create components that interact with one another, significantly accelerating development. For now, let's look at some details.</p>
+
+				<h4>Providers and Event Handling</h4>
+
+				<p>The first thing you may notice is the parameter in the _onAfterConnectorDataChanged method and its absence in the _onAfterChanged method. The reason for this is that, as I mentioned earlier, deterministic events do not require the creation of event objects. The handler for changes to a component's own data is aware of everything about the component’s state and can access the data directly. However, the handler for changes in the connector should not directly access the data provider. The provider must transmit both its state and its data through the connector, which is done using an event object. In this event object, you will notice the detail property, which combines information about the provider's state and its data. I use the terms "data received in the event" and "data passed in the event" to describe this phenomenon.</p>
+
+				<p>The second thing you may notice is the presence of the _updateSomethingWhenConnectorDataChanged and _onAfterConnectorDataChanged methods, but the absence of the onBeforeConnectorDataChanged method. This method is present in many frameworks, but in the KoiCom library, it is not used. Typically, this method contains code that validates data before it is used, preventing its use if the data is invalid.</p>
+
+				<p>But let’s think this through. If we prevent data from being processed, who is responsible for notifying the user that the data could not be applied? Since the component does not store invalid data, it doesn't know whether the data is invalid or not. Who else could take on the responsibility of notifying the user?</p>
+
+				<p>The responsibility can be transferred to the provider that supplied the data. The provider passed the data, so it possesses it. After transmission, it turns out that the data is erroneous in the context of the receiving component. However, the provider should not be aware of the context of the receiver.</p>
+
+				<p>Traditionally, error notifications are not displayed just anywhere; they are displayed in the component that received the data. This forms the basis for the receiver to store the erroneous data it received as its own and, based on that data, show an error notification.</p>
+
+				<p>In the KoiCom library, a component must accept any entered data and modify its state accordingly. This is why there are no onBeforeDataChanged or onBeforeConnectorDataChanged events. Data is always stored in the component, even if it is invalid. Then, the methods _onAfterDataChanged and _onAfterConnectorDataChanged are responsible for displaying the data and validation results, relying not on the transmitted data, but on the data and state of the receiving component. We will discuss this topic in more detail in the "Dataflow" section.</p>
+
+				<h4>User Input Events</h4>
+
+				<p>Non-deterministic user input events include events such as button clicks. All other events, such as entering a string in an input field, are handled in a similar manner. Therefore, I will describe user input events using the example of a button click.</p>
+
+				<p>Button components inherit from the KoiButtonStencil class. This class implements the KoiOperationsInterceptable behavior, which subscribes to events from the button's internal standard component and defines the order for handling the standard event.</p>
+
+				<p>As with data change events, the _attemptApply* method is called, which in this case is named _attemptApplyOperated. This method, like the previous one, first attempts to modify the state and the component's own data (via the _updateSomethingWhenOperated method) and then calls the _onAfterOperated method, which follows the same structure as all _onAfterChanged* methods.</p>
+
+				<p>The call to the _onAfterOperated method eventually leads to the invocation of _dispatchOperationEvent, where the standard dispatchEvent method is called to trigger the koi-operated event.</p>
+
+				<p>Therefore, the process for handling user input events is identical to the process for handling data change events. The only difference is the name of the behavior that must be used to intercept the user event.</p>
+
+				<h4>Summary</h4>
+
+				<p>A component's workflow consists of several processes. Some of these processes are deterministic, meaning methods are called one after another. An example of this is the component initialization process. Other processes are non-deterministic and may be triggered as a reaction to an event. An example of this is handling a button click.</p>
+
+				<p>The KoiCom library exposes both deterministic and non-deterministic processes. For example, the component initialization process is divided into several stages, each of which involves the component executing specific methods. In the constructor, the component initializes the composition of behaviors, and at the _onBeforeConnected stage, it retrieves the default values for its own data, and so on. This structure ensures that each subsequent stage can rely on the results of the previous one.</p>
+
+				<p>Non-deterministic processes are standardized. The reaction to any event follows a few sequential stages: changing the component's own data, its state, its display, and triggering its own event. This standardization allows the developer writing an event handler to be confident about how and when, and most importantly, in which method, the handling can be implemented.</p>
+
+				<p>Despite this standardization, events are classified, but not by the type of event initiator. Instead, they are classified according to the corresponding behavior of the component. This classification includes reactions to changes in the component's own data, changes in the provider's data, user actions, and so on.</p>
+
+			</section>
+		</div>
+		<footer class="main-footer">
+			<div class="float-end">
+				<b>Version</b> 1.13
+			</div>
+			MIT &copy; Koi 2025
+		</footer>
+	</docs-main-wrapper>
+
+<script type="module">
+	import { DocsMainWrapper } from "../../js/docs/controls/panels/docs_main_wrapper.js";
+	if (customElements.get(DocsMainWrapper.getTagName()) === undefined) {
+		customElements.define(DocsMainWrapper.getTagName(), DocsMainWrapper);
+	}
+	import { DocsMainSidebar } from "../../js/docs/controls/sidebars/docs_main_sidebar.js";
+	if (customElements.get(DocsMainSidebar.getTagName()) === undefined) {
+		customElements.define(DocsMainSidebar.getTagName(), DocsMainSidebar);
+	}
+	import { DocsIdLinkForHeader } from "../../js/docs/controls/buttons/docs_idlink_for_header.js";
+	if (customElements.get(DocsIdLinkForHeader.getTagName()) === undefined) {
+		customElements.define(DocsIdLinkForHeader.getTagName(), DocsIdLinkForHeader);
+	}
+
+</script>
+
+</body>
+</html>
