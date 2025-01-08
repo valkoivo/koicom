@@ -45,6 +45,9 @@ Download link:
 ## Fundamental Components ##
 Below are examples of the fundamental components.
 
+<p align="center"><img src="https://valkoivo.github.io/koicom/img/crud.png" alt="koicom crud panel" width="668"/></p>
+
+Working examples here: [a link](https://valkoivo.github.io/koicom/index.html)
 
 ## Example Code ##
 Below is an example of a component that displays the product of two numbers as text.
