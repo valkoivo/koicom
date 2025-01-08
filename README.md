@@ -1,3 +1,5 @@
+![picture alt]([http://via.placeholder.com/200x150](https://valkoivo.github.io/koicom/img/logo_color.png) "KoiCom")
+
 # koicom #
 A link to the documentation:
 [a link](https://valkoivo.github.io/koicom/index.html)
