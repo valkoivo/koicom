@@ -1,4 +1,4 @@
-![picture alt]([http://via.placeholder.com/200x150](https://valkoivo.github.io/koicom/img/logo_color.png](https://valkoivo.github.io/koicom/img/logo_color.png) "KoiCom")
+![picture alt](https://valkoivo.github.io/koicom/img/logo_color.png)
 
 # koicom #
 A link to the documentation:
