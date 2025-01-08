@@ -1,6 +1,6 @@
-![picture alt](https://valkoivo.github.io/koicom/img/logo_color.png)
+<p align="center"><img src="https://valkoivo.github.io/koicom/img/logo_color.png" alt="koicom" width="100"/></p>
+<h2 align="center">KoiCom</h2>
 
-# koicom #
 A link to the documentation:
 [a link](https://valkoivo.github.io/koicom/index.html)
 
