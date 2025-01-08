@@ -52,6 +52,8 @@ Working examples here: [a link](https://valkoivo.github.io/koicom/index.html)
 ## Example Code ##
 Below is an example of a component that displays the product of two numbers as text.
 
+<p align="center"><img src="https://valkoivo.github.io/koicom/img/multiplication.png" alt="koicom crud panel" width="668"/></p>
+
 The component is implemented with the code shown below.
 ```javascript
 import { KoiDataElementInteger } from "../../../../libs/web-components-lib/data_element.js";
