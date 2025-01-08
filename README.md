@@ -166,7 +166,7 @@ import { DocsMultiplyLabel } from "/js/docs/controls/labels/docs_multiply_label.
 if (customElements.get(DocsMultiplyLabel.getTagName()) === undefined) {
 	customElements.define(DocsMultiplyLabel.getTagName(), DocsMultiplyLabel);
 }
-</ script>
+</script>
 ```
 
 ## License ##
