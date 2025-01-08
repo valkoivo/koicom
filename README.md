@@ -1,4 +1,4 @@
-<p align="center"><img src="https://valkoivo.github.io/koicom/img/logo_color.png" alt="koicom" width="100"/></p>
+<p align="center"><img src="https://valkoivo.github.io/koicom/img/logo_color.png" alt="koicom" width="100px"/></p>
 <h2 align="center">KoiCom</h2>
 
 A link to the documentation:
@@ -10,7 +10,7 @@ Frontend interfaces built with the KoiCom library can run entirely on the client
 
 The following is an example of a CRUD panel created using the library's basic components.
 
-<p align="center"><img src="https://valkoivo.github.io/koicom/img/crud.png" alt="koicom crud panel" width="670"/></p>
+<p align="center"><img src="https://valkoivo.github.io/koicom/img/crud.png" alt="koicom crud panel" width="670px"/></p>
 
 A link to the CRUD panel:
 [a link](https://valkoivo.github.io/koicom/docs/book/13_example.html)
