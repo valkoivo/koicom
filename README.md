@@ -45,7 +45,7 @@ Download link:
 ## Fundamental Components ##
 Below are examples of the fundamental components.
 
-<p align="center"><img src="https://valkoivo.github.io/koicom/img/crud.png" alt="koicom crud panel" width="668"/></p>
+<p align="center"><img src="https://valkoivo.github.io/koicom/img/examples.png" alt="koicom crud panel" width="668"/></p>
 
 Working examples here: [a link](https://valkoivo.github.io/koicom/index.html)
 
