@@ -43,7 +43,7 @@ Below are examples of the fundamental components.
 Below is an example of a component that displays the product of two numbers as text.
 
 The component is implemented with the code shown below.
-```
+```javascript
 import { KoiDataElementInteger } from "../../../../libs/web-components-lib/data_element.js";
 import { KoiData, KoiDataCapable } from "../../../../libs/web-components-lib/data.js";
 import { KoiLabelStencil, KoiLabelSocket, KoiLabelSocketConnectable } from "../../../../libs/web-components-lib/controls/labels/control_label.js";
@@ -155,8 +155,10 @@ export class DocsMultiplyLabel extends KoiMultiplyTwoIntegersDataCapable(
 
 }
 ```
+
 The component can be embedded in an HTML document using the following code.
-```
+
+```html
 <docs-multiply-label id="sample_multiply_label_1" value1="2" value2="3"></docs-multiply-label>
 
 <script type="module">
