@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://valkoivo.github.io/koicom/</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/index.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/book/1_overview.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/book/2_structure.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/book/3_usage.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/book/4_inheritance.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/book/5_composition.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/book/6_mvc.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/book/7_workflow.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/book/8_attributes.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/book/9_schema.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/book/10_dataflow.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/book/11_connectors.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/book/12_sockets.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/book/13_example.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/providers/provider.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/label.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/table.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/buttons/idlink.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/buttons/switch.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/formfield/formfieldstring.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/formfield/formfieldinteger.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/formfield/formfielddate.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/formfield/formfieldbinary.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/formfield/formfieldcheckboxes.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/formfield/formfieldsinglechoice.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/panel/panel.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/panel/expansion_panel.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/dialogs/question.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://valkoivo.github.io/koicom/docs/controls/dialogs/dialog.html</loc>
+  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
