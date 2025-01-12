@@ -4,18 +4,10 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://valkoivo.github.io/koicom/</loc>
-  <lastmod>2025-01-11T10:36:17+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
 <url>
   <loc>https://valkoivo.github.io/koicom/index.html</loc>
   <lastmod>2025-01-11T10:36:17+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>1.00</priority>
 </url>
 <url>
   <loc>https://valkoivo.github.io/koicom/docs/book/1_overview.html</loc>
@@ -157,6 +149,4 @@
   <lastmod>2025-01-11T10:36:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-
-
 </urlset>
