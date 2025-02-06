@@ -3,6 +3,7 @@
 
 A link to the documentation:
 [a link](https://valkoivo.github.io/koicom/index.html)
+
 Bluesky:
 [a link](https://bsky.app/profile/valkoivo.bsky.social)
 
