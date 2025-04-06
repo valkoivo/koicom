@@ -40,6 +40,7 @@ body.modal-open {
 	transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
 	margin-left: 230px;
 	z-index: 820;
+	flex: 1 0 auto;
 }
 
 @media (max-width: 767px) {
