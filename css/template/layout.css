@@ -7,12 +7,11 @@ body {
 
 .wrapper {
 	position: relative;
-	overflow-x: hidden;
-	overflow-y: auto;
 	height: auto;
-	min-height: 100%;
-	overflow: initial;
+	min-height: 100vh;
 	background-color: #f9fafc;
+	display: flex;
+	flex-direction: column;
 }
 
 .wrapper:before,
@@ -80,11 +79,9 @@ body.modal-open {
 /* Content */
 .content {
 	min-height: 250px;
-	padding: 15px;
 	margin-right: auto;
 	margin-left: auto;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding: 72px 2rem 0;
 }
 
 .pull-right {
