@@ -14,16 +14,11 @@
 .koi-main-header .idlink-for-header a{
 	padding: 15px 15px;
 	width: 50px;
-	font-family: fontAwesome;
 	color: #ffffff;
 	text-align: center;
 	background-color: #f39c12;
 	background-image: none;
 	display: block;
-}
-
-.koi-main-header .idlink-for-header a:before {
-	content: "\f0c9";
 }
 
 .koi-main-header .idlink-for-header a:hover {
